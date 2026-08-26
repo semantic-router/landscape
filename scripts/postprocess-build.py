@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import shutil
 from pathlib import Path
 
@@ -11,6 +13,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 BUILD_DIR = REPO_ROOT / "build"
 CREATORS_FILE = REPO_ROOT / "data" / "creators.json"
+STATS_SNAPSHOT_FILE = REPO_ROOT / "data" / "stats-snapshot.json"
+STATS_PATTERN = re.compile(r"window\.statsDS\s*=\s*(\{.*?\});", re.DOTALL)
 
 STYLE_TAG = (
     '<link id="intelligent-routing-favicon" rel="icon" type="image/png" '
@@ -91,11 +95,40 @@ def inject_overrides() -> None:
             html_path.write_text(html.replace("</head>", f"{additions}</head>", 1), encoding="utf-8")
 
 
+def apply_stats_fallback() -> None:
+    """Use the maintained snapshot when an anonymous build has no GitHub activity data."""
+    snapshot = json.loads(STATS_SNAPSHOT_FILE.read_text(encoding="utf-8"))
+    snapshot_json = json.dumps(snapshot, ensure_ascii=False, separators=(",", ":"))
+
+    for html_path in (BUILD_DIR / "index.html", BUILD_DIR / "404.html"):
+        if not html_path.is_file():
+            continue
+
+        html = html_path.read_text(encoding="utf-8")
+        match = STATS_PATTERN.search(html)
+        if not match:
+            raise SystemExit(f"Stats dataset not found in: {html_path}")
+
+        current = json.loads(match.group(1))
+        repositories = current.get("repositories", {})
+        incomplete = any(not repositories.get(field) for field in ("bytes", "contributors", "stars"))
+        if not incomplete:
+            continue
+        if os.environ.get("REQUIRE_FRESH_GITHUB_STATS") == "true":
+            raise SystemExit("Authenticated GitHub stats were required but the build returned no activity data")
+
+        html_path.write_text(
+            STATS_PATTERN.sub(f"window.statsDS = {snapshot_json};", html, count=1),
+            encoding="utf-8",
+        )
+
+
 def main() -> None:
     update_creator_metadata()
     copy_brand_assets()
     inject_overrides()
-    print("Applied creator metadata, brand assets, and consistent category ordering.")
+    apply_stats_fallback()
+    print("Applied creator metadata, brand assets, stats fallback, and consistent category ordering.")
 
 
 if __name__ == "__main__":

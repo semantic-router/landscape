@@ -77,7 +77,7 @@ Open `http://127.0.0.1:8000` to preview the site. Run `make validate` before sub
 
 The repository is ready for Netlify through `netlify.toml`. Netlify installs the pinned Landscape2 release, builds the site, publishes `build/`, and preserves client-side routes such as `/guide` and `/stats`.
 
-For complete GitHub activity statistics, configure `GITHUB_TOKENS` as a Netlify secret. The site can build without it, but repository activity metadata will be limited.
+GitHub activity uses a committed verified snapshot when Netlify has no API token. The `Refresh ecosystem stats` GitHub Action rebuilds that snapshot weekly with the repository's authenticated workflow token; `GITHUB_TOKENS` can still be configured in Netlify for fresh metadata on every deploy.
 
 ## Evidence and maintenance
 

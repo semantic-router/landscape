@@ -1,0 +1,42 @@
+name: Refresh ecosystem stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-ecosystem-stats
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the landscape
+        uses: actions/checkout@v4
+
+      - name: Build with authenticated GitHub metadata
+        env:
+          GITHUB_TOKENS: ${{ github.token }}
+          REQUIRE_FRESH_GITHUB_STATS: "true"
+          URL: https://the-semantic.ai
+        run: bash ./scripts/netlify-build.sh
+
+      - name: Refresh the committed fallback
+        run: python3 ./scripts/refresh-stats-snapshot.py
+
+      - name: Commit changed stats
+        run: |
+          if git diff --quiet -- data/stats-snapshot.json; then
+            echo "Stats snapshot is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stats-snapshot.json
+          git commit -m "chore: refresh landscape stats"
+          git push

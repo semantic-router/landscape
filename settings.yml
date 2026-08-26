@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/settings.schema.json
 
-foundation: LLM Routing
+foundation: Intelligent Routing
 
 url: http://127.0.0.1:8000
 
@@ -13,51 +13,54 @@ colors:
   color6: "rgba(18, 48, 84, 0.76)"
   color7: "rgba(205, 230, 255, 1)"
 
-description: Explore the products, open-source systems, serving infrastructure, benchmarks, and research shaping LLM routing and Mixture-of-Models.
+description: A living map of intelligent routing across fragmented models, devices, locations, and preferences.
 
 footer:
-  links:
-    github: "https://github.com/vllm-project/semantic-router"
-    homepage: "https://vllm-sr.ai/"
-  logo: "brand/llm-routing-landscape.png"
-  text: "An evidence-led ecosystem map maintained by the vLLM Semantic Router community. Product claims remain vendor-reported unless independently benchmarked."
+  logo: "brand/intelligent-routing-mark-512.png"
+  text: "**Map the fragmentation. Build the routing layer.**"
 
-grid_items_size: medium
+grid_items_size: large
 
 groups:
-  - name: All
+  # Landscape2 reserves `all` for its Card view. Keep a distinct internal
+  # identifier so the full landscape is rendered once, then label it "All"
+  # in the small UI override.
+  - name: Everything
     alias: all
     categories:
-      - Routing Products
       - Open Routing Systems
-      - Gateway and Execution
-      - Evaluation and Community
-  - name: Routing Products
-    alias: products
-    categories:
       - Routing Products
+      - Evaluation and Community
+      - Gateway and Execution
   - name: Open Routing
     alias: open
     categories:
       - Open Routing Systems
-  - name: Gateway and Serving
-    alias: execution
+  - name: Routing Products
+    alias: products
     categories:
-      - Gateway and Execution
+      - Routing Products
   - name: Evaluation
     alias: evaluation
     categories:
       - Evaluation and Community
+  - name: Gateway and Serving
+    alias: execution
+    categories:
+      - Gateway and Execution
 
 header:
-  links:
-    github: "https://github.com/vllm-project/semantic-router"
-  logo: "brand/llm-routing-landscape.png"
-  motd: "**One Model API. Many Models Working Together.** Explore the decision and execution layers behind the emerging System of Models."
+  logo: "brand/intelligent-routing-mark-512.png"
+  motd: "**Intelligence is fragmenting. Routing is becoming the system.** Explore the products, open systems, research, and execution layers shaping intelligent routing."
 
 hide_organization_section_in_projects: true
 
 images:
-  open_graph: "http://127.0.0.1:8000/images/llm-routing-landscape.png"
+  open_graph: "http://127.0.0.1:8000/images/intelligent-routing-mark-512.png"
 
-view_mode: grid
+logos_viewbox:
+  adjust: true
+  exclude:
+    - nadir.svg
+
+view_mode: card

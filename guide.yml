@@ -1,6 +1,19 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/guide.schema.json
 
 categories:
+  - category: Open Routing Systems
+    content: |
+      Open routing systems make the decision layer inspectable and extensible. Some are production-oriented control planes; others are research implementations that explore new routing objectives, learning methods, and collaboration patterns.
+
+      A useful comparison starts with five questions: what signal is observed, what action can be taken, which objective is optimized, how the decision is evaluated, and whether live serving state is part of the loop.
+    subcategories:
+      - subcategory: Programmable Routers
+        content: |
+          Programmable routers let teams express policy over workload semantics, cost, latency, safety, provider availability, or model capability. They range from focused libraries to complete routing and execution layers integrated with gateways and inference runtimes.
+      - subcategory: Research Toolboxes and Methods
+        content: |
+          Research projects explore learned routers, preference-aware routing, cold-start generalization, budget allocation, multi-turn decisions, agent feedback, and multi-model fusion. Their results are most useful when the training assumptions, candidate model pool, evaluation protocol, and serving overhead are made explicit.
+
   - category: Routing Products
     content: |
       Routing products expose model choice as a system capability. They differ in where the decision runs, how much control the operator retains, and whether routing selects one model or coordinates several.
@@ -17,18 +30,17 @@ categories:
         content: |
           Collaboration systems go beyond selecting one winner. They can run models in parallel or sequence, exchange intermediate reasoning, verify outputs, or synthesize a final answer. This expands the design space from a model router to a System of Models.
 
-  - category: Open Routing Systems
+  - category: Evaluation and Community
     content: |
-      Open routing systems make the decision layer inspectable and extensible. Some are production-oriented control planes; others are research implementations that explore new routing objectives, learning methods, and collaboration patterns.
+      Router quality is not a single accuracy number. A useful evaluation measures the end-to-end trade-off across answer quality, latency, inference and provider cost, reliability, safety, and routing overhead—on workloads that match the intended deployment.
 
-      A useful comparison starts with five questions: what signal is observed, what action can be taken, which objective is optimized, how the decision is evaluated, and whether live serving state is part of the loop.
+      The research spine now spans several distinct problems. Foundational cost-quality routing includes [RouterBench](https://arxiv.org/abs/2403.12031) and [RouteLLM](https://arxiv.org/abs/2406.18665). Preference and changing-pool work includes [Arch-Router](https://arxiv.org/abs/2506.16655), [RouteProfile](https://arxiv.org/abs/2605.00180), and [UniRoute](https://openreview.net/forum?id=ka82fvJ5f1). Test-time compute and resource-aware routing includes [BEST-Route](https://arxiv.org/abs/2603.10625), [R2-Router](https://arxiv.org/abs/2602.02823), [RouteBalance](https://arxiv.org/abs/2606.17949), and [Pandora's Router](https://arxiv.org/abs/2608.20316).
+
+      Agentic and temporal routing is becoming its own field: [Router-R1](https://arxiv.org/abs/2506.09033), [Agent-as-a-Router](https://arxiv.org/abs/2606.22902), [MTRouter](https://aclanthology.org/2026.acl-long.2045/), [SWE-Router](https://arxiv.org/abs/2607.00053), [TRACE-Router](https://arxiv.org/abs/2607.22465), and [Switchcraft](https://arxiv.org/abs/2605.07112) move beyond one-shot prompt classification. Reliability and diagnosis remain equally important through [ContinuityBench](https://arxiv.org/abs/2607.15899), [RouteJudge](https://arxiv.org/abs/2606.18774), [The Routing Plateau](https://arxiv.org/abs/2606.07587), [Opportunity Is Not Realizability](https://arxiv.org/abs/2608.08265), and the adversarial [Route to Rome](https://aclanthology.org/2026.acl-long.2051/).
     subcategories:
-      - subcategory: Programmable Routers
+      - subcategory: Benchmarks and Leaderboards
         content: |
-          Programmable routers let teams express policy over workload semantics, cost, latency, safety, provider availability, or model capability. They range from focused libraries to complete routing and execution layers integrated with gateways and inference runtimes.
-      - subcategory: Research Toolboxes and Methods
-        content: |
-          Research projects explore learned routers, preference-aware routing, cold-start generalization, budget allocation, and multi-model fusion. Their results are most useful when the training assumptions, candidate model pool, evaluation protocol, and serving overhead are made explicit.
+          Benchmarks differ in task mix, labels, judge models, cost assumptions, candidate models, and whether they evaluate a static prediction or a deployable system. Leaderboards should therefore publish recipes and traces—not only aggregate scores—so results can be reproduced and diagnosed.
 
   - category: Gateway and Execution
     content: |
@@ -42,13 +54,3 @@ categories:
       - subcategory: Inference Serving and Schedulers
         content: |
           Serving routers and schedulers operate closer to inference engines. They balance replicas, exploit prefix locality, manage disaggregated prefill and decode, and place workloads across heterogeneous accelerators. This is the execution substrate for a Mixture-of-Models.
-
-  - category: Evaluation and Community
-    content: |
-      Router quality is not a single accuracy number. A useful evaluation measures the end-to-end trade-off across answer quality, latency, inference and provider cost, reliability, safety, and routing overhead—on workloads that match the intended deployment.
-
-      Representative research directions include foundational routing ([RouterBench](https://arxiv.org/abs/2403.12031), [RouteLLM](https://arxiv.org/abs/2406.18665)); preference and cold-start routing ([Arch-Router](https://arxiv.org/abs/2506.16655), [RouteProfile](https://arxiv.org/abs/2605.00180)); budgeted and agentic routing ([BEST-Route](https://arxiv.org/abs/2603.10625), [Router-R1](https://arxiv.org/abs/2506.09033)); serving and reliability ([RouteBalance](https://arxiv.org/abs/2606.17949), [ContinuityBench](https://arxiv.org/abs/2607.15899)); and router diagnostics ([RouteJudge](https://arxiv.org/abs/2606.18774), [The Routing Plateau](https://arxiv.org/abs/2606.07587), [Opportunity Is Not Realizability](https://arxiv.org/abs/2608.08265)).
-    subcategories:
-      - subcategory: Benchmarks and Leaderboards
-        content: |
-          Benchmarks differ in task mix, labels, judge models, cost assumptions, candidate models, and whether they evaluate a static prediction or a deployable system. Leaderboards should therefore publish recipes and traces—not only aggregate scores—so results can be reproduced and diagnosed.

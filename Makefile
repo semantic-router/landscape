@@ -9,7 +9,7 @@ validate:
 	landscape2 validate guide --guide-file guide.yml
 
 build:
-	landscape2 build --data-file data.yml --settings-file settings.yml --guide-file guide.yml --logos-path logos --output-dir build
+	./scripts/build-landscape.sh
 	./scripts/postprocess-build.sh
 
 serve:

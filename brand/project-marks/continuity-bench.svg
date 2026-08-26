@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ContinuityBench">
+  <rect width="512" height="512" rx="112" fill="#0c1f38"/>
+  <path d="M151 177h116c64 0 116 52 116 116s-52 116-116 116H151" fill="none" stroke="#339df1" stroke-width="58" stroke-linecap="round"/>
+  <path d="M361 335H245c-64 0-116-52-116-116s52-116 116-116h116" fill="none" stroke="#82c8ff" stroke-width="58" stroke-linecap="round"/>
+  <rect x="224" y="214" width="64" height="84" rx="20" fill="#ffb61b"/>
+</svg>

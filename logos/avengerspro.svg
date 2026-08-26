@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AvengersPro neutral project mark">
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="#101B36"/>
+  <path d="M126 374 238 126h36l112 248h-70l-20-50h-80l-20 50Zm114-112h32l-16-44Z" fill="#FFFFFF"/>
+  <path d="M112 350c68-8 112-38 144-94 32 56 76 86 144 94" fill="none" stroke="#4FC3F7" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="112" cy="350" r="18" fill="#8BE28B"/>
+  <circle cx="256" cy="256" r="18" fill="#FFC857"/>
+  <circle cx="400" cy="350" r="18" fill="#FF6B6B"/>
+</svg>

@@ -1,0 +1,30 @@
+/* Small, deliberate refinements on top of Landscape2's generated UI. */
+/* The framework adds a Card-only `all` option. The configured Everything
+   group provides the same full dataset in both Card and Grid modes. */
+button[title="All"],
+select option[value="all"] {
+  display: none !important;
+}
+
+header img[alt*="logo" i] {
+  width: 54px !important;
+  height: 54px !important;
+  object-fit: contain !important;
+}
+
+footer {
+  margin-top: 16px !important;
+  padding: 28px 48px !important;
+}
+
+footer img[alt*="logo" i] {
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 24px !important;
+  }
+}

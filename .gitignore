@@ -1,5 +1,8 @@
 build/
 .cache/
+.netlify/
+.netlify-settings.*
+__pycache__/
+*.py[cod]
 .DS_Store
 *.log
-

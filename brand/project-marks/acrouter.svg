@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ACRouter neutral project mark">
+  <rect x="28" y="28" width="456" height="456" rx="112" fill="#10233F"/>
+  <path d="M141 194c31-58 87-88 154-78 53 8 96 42 118 88" fill="none" stroke="#63D7FF" stroke-width="24" stroke-linecap="round"/>
+  <path d="M397 158l17 51-52-4" fill="none" stroke="#63D7FF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M371 318c-31 58-87 88-154 78-53-8-96-42-118-88" fill="none" stroke="#70E2A8" stroke-width="24" stroke-linecap="round"/>
+  <path d="M115 354l-17-51 52 4" fill="none" stroke="#70E2A8" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="77" fill="#F4F8FF"/>
+  <path d="M219 297l37-95 37 95M232 267h48" fill="none" stroke="#10233F" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="105" cy="256" r="18" fill="#FFB543"/>
+  <circle cx="407" cy="256" r="18" fill="#B792FF"/>
+</svg>

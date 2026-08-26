@@ -1,0 +1,18 @@
+[build]
+  command = "./scripts/netlify-build.sh"
+  publish = "build"
+
+[build.environment]
+  LANDSCAPE2_VERSION = "1.1.0"
+
+# Landscape2 is a client-side application. Preserve deep links such as /guide,
+# /stats, and project detail routes when users refresh or share them.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

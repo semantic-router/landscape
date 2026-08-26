@@ -1,150 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/data.schema.json
 
 categories:
-  - name: Routing Products
-    subcategories:
-      - name: Managed Model Routers
-        items:
-          - name: Microsoft Foundry Model Router
-            homepage_url: https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/model-router
-            logo: microsoft.svg
-            description: One managed deployment that routes prompts among eligible models using Quality, Cost, or Balanced modes.
-            extra:
-              summary_tags: managed, cloud, model selection, quality, cost
-              summary_personas: AI Platform Engineers, Application Developers
-          - name: Amazon Bedrock Intelligent Prompt Routing
-            homepage_url: https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html
-            logo: aws.svg
-            description: Predicts response quality and routes between two models in the same model family with configurable criteria and fallback.
-            extra:
-              summary_tags: managed, cloud, quality prediction, fallback
-          - name: Vertex AI Model Optimizer
-            homepage_url: https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-pro-flash-on-vertex-ai
-            logo: google-cloud.svg
-            description: A Gemini meta-endpoint that automatically chooses an intelligence level from cost, quality, or balanced preferences.
-            extra:
-              summary_tags: managed, Gemini, meta endpoint, preference aligned
-          - name: DigitalOcean Inference Router
-            homepage_url: https://docs.digitalocean.com/products/inference/how-to/use-inference-router/
-            logo: digitalocean.svg
-            description: A cloud inference control plane with task definitions, model pools, cost and latency policy, cache-aware decisions, and fallback.
-            extra:
-              summary_tags: managed, model pools, cache aware, recipes, fallback
-              other_links:
-                - name: Katanemo acquisition
-                  url: https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Acquires-Katanemo-Labs-to-Accelerate-the-Inference-Cloud-for-the-Agentic-Era/default.aspx
-          - name: Databricks Unity AI Gateway
-            homepage_url: https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway
-            logo: databricks.svg
-            description: Enterprise smart routing connected to governance, cost attribution, policy, tracing, and runtime controls.
-            extra:
-              summary_tags: enterprise, governance, FinOps, model routing
-          - name: Cloudflare Dynamic Routing
-            homepage_url: https://developers.cloudflare.com/ai-gateway/features/dynamic-routing/
-            logo: cloudflare.svg
-            description: Versioned visual or JSON routing flows with conditions, quotas, budgets, rollout percentages, model nodes, and fallback.
-            extra:
-              summary_tags: gateway, policy, flow, budget, rollout, fallback
-          - name: OpenRouter Auto Router
-            homepage_url: https://openrouter.ai/docs/guides/routing/routers/auto-router
-            logo: openrouter.svg
-            description: A managed model router with task-aware selection, cost tiers, model filters, session stickiness, and a changing candidate pool.
-            extra:
-              summary_tags: managed, marketplace, task routing, session aware
-          - name: Ramp Router
-            homepage_url: https://router.com/
-            logo: ramp.svg
-            description: A multi-provider Responses-compatible endpoint with benchmark aliases, fallbacks, shadow traffic, spend controls, and agent integration.
-            extra:
-              summary_tags: managed, benchmark routing, shadow traffic, coding agents
-              documentation_url: https://docs.router.com/
-          - name: Kong AI Gateway
-            homepage_url: https://developer.konghq.com/ai-gateway/
-            logo: kong.svg
-            repo_url: https://github.com/Kong/kong
-            license: Apache-2.0
-            description: Enterprise and open-core gateway with semantic load balancing, latency and usage routing, retries, fallback, policy, and governance.
-            extra:
-              summary_tags: gateway, semantic load balancing, governance, open core
-
-      - name: Independent and Embedded Routers
-        items:
-          - name: Not Diamond
-            homepage_url: https://www.notdiamond.ai/
-            logo: not-diamond.svg
-            description: Independent routing recommendation and API layer that predicts the best model for an input and target objective.
-            extra:
-              summary_tags: commercial, router API, quality, cost
-          - name: OrcaRouter
-            homepage_url: https://www.orcarouter.ai/
-            logo: orcarouter.svg
-            repo_url: https://github.com/Continuum-AI-Corp/OrcaRouter-Lite
-            license: MIT
-            description: Hosted adaptive router with rules, fallback, governance, logs, BYOK, and an MIT-licensed Lite edition.
-            extra:
-              summary_tags: open core, adaptive routing, governance, BYOK
-              other_links:
-                - name: Paper
-                  url: https://arxiv.org/abs/2605.30736
-          - name: Nadir
-            homepage_url: https://getnadir.com
-            logo: nadir.svg
-            repo_url: https://github.com/NadirRouter/NadirClaw
-            description: A classify-route-verify-escalate product for coding-agent cost control with a source-available local proxy.
-            extra:
-              summary_tags: commercial, cascade, verification, escalation, coding agents
-          - name: Weave Router
-            homepage_url: https://workweave.ai
-            logo: weave.svg
-            description: Coding-agent prompt router centered on engineering intelligence, token efficiency, and quality per token.
-            extra:
-              summary_tags: commercial, coding agents, quality per token
-          - name: Sqwish
-            homepage_url: https://www.sqwish.ai/
-            logo: sqwish.svg
-            description: Outcome optimization across prompts, models, context, memory, tools, and routing using user and business feedback.
-            extra:
-              summary_tags: commercial, outcome optimization, feedback
-          - name: Cursor Router
-            homepage_url: https://cursor.com/blog/router
-            logo: cursor.svg
-            description: Product-embedded model choice for coding requests with Intelligence, Balance, and Cost modes.
-            extra:
-              summary_tags: embedded, coding agent, session, auto model
-          - name: Kilo Auto Model
-            homepage_url: https://kilo.ai/docs/code-with-ai/agents/auto-model
-            logo: kilo.svg
-            description: Stable Frontier, Efficient, and Free tiers backed by session-aware difficulty classification and refreshed benchmarks.
-            extra:
-              summary_tags: embedded, coding agent, session aware, product tiers
-
-      - name: Multi-Model Collaboration
-        items:
-          - name: OpenRouter Fusion
-            homepage_url: https://openrouter.ai/docs/guides/features/server-tools/fusion
-            logo: openrouter.svg
-            description: Runs a panel of models, judges their outputs, and synthesizes one response behind a single model slug.
-            extra:
-              summary_tags: composition, judge, synthesis, model panel
-          - name: Sakana Fugu
-            homepage_url: https://sakana.ai/fugu-release/
-            logo: sakana.svg
-            description: One model API that selects, delegates, coordinates, verifies, and synthesizes across a model and agent pool.
-            extra:
-              summary_tags: mixture of models, delegation, verification, synthesis
-          - name: Microsoft MDASH
-            homepage_url: https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/
-            logo: microsoft.svg
-            description: Vertical cyber Mixture-of-Models system combining a specialist model, frontier escalation, and a large agent harness.
-            extra:
-              summary_tags: vertical MoM, cybersecurity, specialist, escalation
-          - name: Thesean Ship
-            homepage_url: https://docs.thesean.ai/
-            logo: thesean.svg
-            description: Best-execution endpoint applying inference-time optimization while preserving the selected model contract.
-            extra:
-              summary_tags: best execution, inference optimization, cost
-
   - name: Open Routing Systems
     subcategories:
       - name: Programmable Routers
@@ -158,14 +14,22 @@ categories:
             extra:
               summary_tags: semantic routing, mixture of models, recipes, model pools, heterogeneous hardware
               documentation_url: https://vllm-sr.ai/docs/
+          - name: NVIDIA LLM Router
+            homepage_url: https://github.com/NVIDIA-AI-Blueprints/llm-router
+            logo: nvidia.svg
+            repo_url: https://github.com/NVIDIA-AI-Blueprints/llm-router
+            license: Apache-2.0
+            description: NVIDIA AI Blueprint for task, complexity, and multimodal model routing with a production-oriented v1 and experimental intent and learned-routing v2.
+            extra:
+              summary_tags: AI blueprint, learned routing, intent routing, multimodal
           - name: NeMo Switchyard
             homepage_url: https://github.com/NVIDIA-NeMo/Switchyard
-            logo: switchyard.svg
+            logo: nvidia.svg
             repo_url: https://github.com/NVIDIA-NeMo/Switchyard
             license: Apache-2.0
-            description: Rust routing server preserving native OpenAI and Anthropic APIs with translation, fallback, and benchmarking.
+            description: Experimental Rust proxy and library with OpenAI and Anthropic translation, classifier, stage, escalation, composite, and A/B routing, plus operational metrics.
             extra:
-              summary_tags: Rust, protocol translation, fallback, gateway
+              summary_tags: Rust, protocol translation, classifier, escalation, metrics
           - name: LiteLLM
             homepage_url: https://docs.litellm.ai/docs/proxy/auto_routing
             logo: litellm.svg
@@ -195,6 +59,17 @@ categories:
                   url: https://arxiv.org/abs/2608.06867
                 - name: xRouteBench
                   url: https://huggingface.co/datasets/ulab-ai/xRouteBench
+          - name: OpenSquilla
+            homepage_url: https://github.com/opensquilla/opensquilla
+            logo: opensquilla.svg
+            repo_url: https://github.com/opensquilla/opensquilla
+            license: Apache-2.0
+            description: Open agent harness with an on-device turn router, configurable model tiers, decision logging, and optional multi-model ensemble execution.
+            extra:
+              summary_tags: agentic routing, on device, model tiers, ensemble
+              other_links:
+                - name: Technical report
+                  url: https://arxiv.org/abs/2607.11399
           - name: RouteLLM
             homepage_url: https://github.com/lm-sys/RouteLLM
             logo: routellm.svg
@@ -260,9 +135,12 @@ categories:
             homepage_url: https://github.com/NadirRouter/NadirClaw
             logo: nadir.svg
             repo_url: https://github.com/NadirRouter/NadirClaw
-            description: Local coding-agent proxy with prompt classification, verification, escalation, fallbacks, and cost tracking.
+            description: Source-available local coding-agent proxy with prompt classification, verification, escalation, fallbacks, and cost tracking.
             extra:
               summary_tags: source available, coding agents, verification, escalation
+              other_links:
+                - name: License
+                  url: https://github.com/NadirRouter/NadirClaw/blob/main/LICENSE
 
       - name: Research Toolboxes and Methods
         items:
@@ -277,6 +155,59 @@ categories:
               other_links:
                 - name: RouteJudge
                   url: https://arxiv.org/abs/2606.18774
+          - name: ACRouter
+            homepage_url: https://github.com/LanceZPF/agent-as-a-router
+            logo: acrouter.svg
+            repo_url: https://github.com/LanceZPF/agent-as-a-router
+            license: MIT
+            description: Agent-as-a-Router implementation that learns from context, execution actions, verifier feedback, and accumulated routing memory for coding tasks.
+            extra:
+              summary_tags: agentic routing, verifier feedback, memory, coding
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2606.22902
+                - name: CodeRouterBench
+                  url: https://huggingface.co/datasets/Lance1573/CodeRouterBench
+          - name: MTRouter
+            homepage_url: https://github.com/ZhangYiqun018/MTRouter
+            logo: mtrouter.svg
+            repo_url: https://github.com/ZhangYiqun018/MTRouter
+            license: MIT
+            description: Cost-aware multi-turn router that jointly represents conversation history and candidate models instead of treating each turn independently.
+            extra:
+              summary_tags: multi turn, conversation history, cost aware, ACL 2026
+              other_links:
+                - name: Paper
+                  url: https://aclanthology.org/2026.acl-long.2045/
+          - name: R2-Router
+            homepage_url: https://github.com/UCF-ML-Research/R2-Router
+            logo: r2-bench.svg
+            repo_url: https://github.com/UCF-ML-Research/R2-Router
+            description: Jointly selects both the model and its output-length budget, treating reasoning spend as a routing action rather than a fixed model cost.
+            extra:
+              summary_tags: reasoning budget, output length, model selection, ICML 2026
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2602.02823
+          - name: Arch-Router
+            homepage_url: https://huggingface.co/katanemo/Arch-Router-1.5B
+            logo: katanemo.svg
+            description: Compact preference-aligned router that maps requests to user-defined domain and action preferences while supporting a changing model pool.
+            extra:
+              summary_tags: preference aligned, domain action, transparent routing, model pool
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2506.16655
+          - name: Avengers-Pro
+            homepage_url: https://github.com/ZhangYiqun018/AvengersPro
+            logo: avengerspro.svg
+            repo_url: https://github.com/ZhangYiqun018/AvengersPro
+            description: Test-time router that embeds and clusters queries, then selects models with a tunable performance-efficiency score.
+            extra:
+              summary_tags: test time routing, semantic clustering, performance efficiency, cost quality
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2508.12631
           - name: GraphRouter
             homepage_url: https://github.com/ulab-uiuc/GraphRouter
             logo: uiuc-ulab.svg
@@ -318,13 +249,19 @@ categories:
             description: Interpretable routing through item response theory estimates of model ability and query difficulty.
             extra:
               summary_tags: interpretable, capability, difficulty, item response theory
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2506.01048
           - name: CARROT
             homepage_url: https://github.com/somerstep/CARROT
             logo: carrot.svg
             repo_url: https://github.com/somerstep/CARROT
             description: Cost-aware rate-optimal routing with separate performance and cost estimates.
             extra:
-              summary_tags: cost aware, rate optimal, University of Michigan
+              summary_tags: cost aware, rate optimal, performance cost, SPROUT
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2502.03261
           - name: RouterDC
             homepage_url: https://github.com/shuhao02/RouterDC
             logo: routerdc.svg
@@ -332,6 +269,9 @@ categories:
             description: Dual-contrastive learning for query and model representations.
             extra:
               summary_tags: contrastive learning, query model matching, NeurIPS 2024
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2409.19886
           - name: RouteProfile
             homepage_url: https://github.com/ulab-uiuc/RouteProfile
             logo: uiuc-ulab.svg
@@ -343,9 +283,210 @@ categories:
             homepage_url: https://github.com/tianyi-lab/TSRouter
             logo: tsrouter.svg
             repo_url: https://github.com/tianyi-lab/TSRouter
-            description: Routes time-series workloads across text and vision or multimodal model paths.
+            description: Graph-based router that jointly selects a text, visual, or mixed modality and an LLM or VLM under a configurable performance-cost preference.
             extra:
-              summary_tags: time series, multimodal, modality routing
+              summary_tags: time series, graph routing, modality model selection, cost quality
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2607.08940
+
+  - name: Routing Products
+    subcategories:
+      - name: Managed Model Routers
+        items:
+          - name: Microsoft Foundry Model Router
+            homepage_url: https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/model-router
+            logo: microsoft.svg
+            description: One managed deployment that routes prompts among eligible models using Quality, Cost, or Balanced modes.
+            extra:
+              summary_tags: managed, cloud, model selection, quality, cost
+              summary_personas: AI Platform Engineers, Application Developers
+          - name: Amazon Bedrock Intelligent Prompt Routing
+            homepage_url: https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html
+            logo: aws.svg
+            description: Predicts response quality and routes between two models in the same model family with configurable criteria and fallback.
+            extra:
+              summary_tags: managed, cloud, quality prediction, fallback
+          - name: Vertex AI Model Optimizer
+            homepage_url: https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-pro-flash-on-vertex-ai
+            logo: google-cloud.svg
+            description: A Gemini meta-endpoint that automatically chooses an intelligence level from cost, quality, or balanced preferences.
+            extra:
+              summary_tags: managed, Gemini, meta endpoint, preference aligned
+          - name: Runway Media Router
+            homepage_url: https://runway.com/news/company-news/introducing-runway-media-router
+            logo: runway.svg
+            description: Managed preference router for video, image, and audio generation that filters by capability and policy, then optimizes cost, latency, or quality.
+            extra:
+              summary_tags: managed, generative media, multimodal, preference routing
+              documentation_url: https://docs.dev.runwayml.com/model-routers/
+          - name: DigitalOcean Inference Router
+            homepage_url: https://docs.digitalocean.com/products/inference/how-to/use-inference-router/
+            logo: digitalocean.svg
+            description: A cloud inference control plane with task definitions, model pools, cost and latency policy, cache-aware decisions, and fallback.
+            extra:
+              summary_tags: managed, model pools, cache aware, recipes, fallback
+              other_links:
+                - name: Katanemo acquisition
+                  url: https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Acquires-Katanemo-Labs-to-Accelerate-the-Inference-Cloud-for-the-Agentic-Era/default.aspx
+          - name: Databricks Unity AI Gateway
+            homepage_url: https://www.databricks.com/blog/ai-governance-data-ai-summit-2026-whats-new-unity-ai-gateway
+            logo: databricks.svg
+            description: Enterprise smart routing connected to governance, cost attribution, policy, tracing, and runtime controls.
+            extra:
+              summary_tags: enterprise, governance, FinOps, model routing
+          - name: Cloudflare Dynamic Routing
+            homepage_url: https://developers.cloudflare.com/ai-gateway/features/dynamic-routing/
+            logo: cloudflare.svg
+            description: Versioned visual or JSON routing flows with conditions, quotas, budgets, rollout percentages, model nodes, and fallback.
+            extra:
+              summary_tags: gateway, policy, flow, budget, rollout, fallback
+          - name: OpenRouter Auto Router
+            homepage_url: https://openrouter.ai/docs/guides/routing/routers/auto-router
+            logo: openrouter.svg
+            description: A managed model router with task-aware selection, cost tiers, model filters, session stickiness, and a changing candidate pool.
+            extra:
+              summary_tags: managed, marketplace, task routing, session aware
+          - name: Orq.ai AI Router
+            homepage_url: https://orq.ai/pricing
+            logo: orq.svg
+            description: Managed OpenAI-compatible gateway with smart cost-quality routing, model and provider policy, fallbacks, load balancing, and regional controls.
+            extra:
+              summary_tags: managed, smart router, governance, regional policy
+              documentation_url: https://docs.orq.ai/
+          - name: Neural Router
+            homepage_url: https://neuralrouter.ai/platform
+            logo: neural-router.svg
+            description: Commercial inference control plane that profiles workload intent and constraints, scores eligible model-provider paths, and exposes route receipts.
+            extra:
+              summary_tags: commercial, workload intent, policy, route receipts
+          - name: LLM Router (llmrouter.app)
+            homepage_url: https://llmrouter.app/
+            logo: llmrouter-app.svg
+            description: Hosted OpenAI-compatible router combining prompt complexity, tags, business rules, context pruning, privacy controls, and provider fallback.
+            extra:
+              summary_tags: commercial, prompt complexity, context optimization, privacy
+              documentation_url: https://docs.llmrouter.app/
+          - name: Ramp Router
+            homepage_url: https://router.com/
+            logo: ramp.svg
+            description: A multi-provider Responses-compatible endpoint with benchmark aliases, fallbacks, shadow traffic, spend controls, and agent integration.
+            extra:
+              summary_tags: managed, benchmark routing, shadow traffic, coding agents
+              documentation_url: https://docs.router.com/
+          - name: Kong AI Gateway
+            homepage_url: https://developer.konghq.com/ai-gateway/
+            logo: kong.svg
+            repo_url: https://github.com/Kong/kong
+            license: Apache-2.0
+            description: Enterprise and open-core gateway with semantic load balancing, latency and usage routing, retries, fallback, policy, and governance.
+            extra:
+              summary_tags: gateway, semantic load balancing, governance, open core
+
+      - name: Independent and Embedded Routers
+        items:
+          - name: GitHub Copilot Auto
+            homepage_url: https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/models/auto-model-selection
+            logo: github.svg
+            description: Product-embedded task and health-aware model selection across Copilot surfaces, aligned to cache boundaries and visible per response.
+            extra:
+              summary_tags: embedded, coding agents, task optimization, system health
+              other_links:
+                - name: HyDRA paper
+                  url: https://arxiv.org/abs/2605.17106
+          - name: ChatGPT GPT-5 Router
+            homepage_url: https://openai.com/index/introducing-gpt-5/
+            logo: openai.svg
+            description: Landmark product-embedded router that selected between efficient and deeper-reasoning paths from conversation complexity, tool needs, and explicit intent.
+            extra:
+              summary_tags: embedded, reasoning, real time, product system
+          - name: Not Diamond
+            homepage_url: https://www.notdiamond.ai/
+            logo: not-diamond.svg
+            description: Independent routing recommendation and API layer that predicts the best model for an input and target objective.
+            extra:
+              summary_tags: commercial, router API, quality, cost
+          - name: OrcaRouter
+            homepage_url: https://www.orcarouter.ai/
+            logo: orcarouter.svg
+            repo_url: https://github.com/Continuum-AI-Corp/OrcaRouter-Lite
+            license: MIT
+            description: Hosted adaptive router with rules, fallback, governance, logs, BYOK, and an MIT-licensed Lite edition.
+            extra:
+              summary_tags: open core, adaptive routing, governance, BYOK
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2605.30736
+          - name: Nadir
+            homepage_url: https://getnadir.com
+            logo: nadir.svg
+            repo_url: https://github.com/NadirRouter/NadirClaw
+            description: A classify-route-verify-escalate product for coding-agent cost control with a source-available local proxy.
+            extra:
+              summary_tags: commercial, cascade, verification, escalation, coding agents
+          - name: Weave Router
+            homepage_url: https://workweave.ai
+            logo: weave.svg
+            description: Coding-agent prompt router centered on engineering intelligence, token efficiency, and quality per token.
+            extra:
+              summary_tags: commercial, coding agents, quality per token
+          - name: Sqwish
+            homepage_url: https://www.sqwish.ai/
+            logo: sqwish.svg
+            description: Outcome optimization across prompts, models, context, memory, tools, and routing using user and business feedback.
+            extra:
+              summary_tags: commercial, outcome optimization, feedback
+          - name: Cursor Router
+            homepage_url: https://cursor.com/blog/router
+            logo: cursor.svg
+            description: Product-embedded model choice for coding requests with Intelligence, Balance, and Cost modes.
+            extra:
+              summary_tags: embedded, coding agent, session, auto model
+          - name: Kilo Auto Model
+            homepage_url: https://kilo.ai/docs/code-with-ai/agents/auto-model
+            logo: kilo.svg
+            description: Stable Frontier, Efficient, and Free tiers backed by session-aware difficulty classification and refreshed benchmarks.
+            extra:
+              summary_tags: embedded, coding agent, session aware, product tiers
+          - name: Entelligence Model Router
+            homepage_url: https://entelligence.ai/model-router
+            logo: entelligence.svg
+            description: Self-hosted coding-agent router that scores each turn locally, selects among cost and capability lanes, and keeps sessions cache-aligned.
+            extra:
+              summary_tags: commercial, coding agents, local classifier, session aware
+
+      - name: Multi-Model Collaboration
+        items:
+          - name: Devin Fusion
+            homepage_url: https://cognition.com/blog/devin-fusion
+            logo: cognition.svg
+            description: Multi-model coding harness pairing a frontier main agent with a lower-cost sidekick and dynamic mid-session routing while preserving separate cached contexts.
+            extra:
+              summary_tags: commercial, coding agents, sidekick, dynamic routing, model collaboration
+          - name: OpenRouter Fusion
+            homepage_url: https://openrouter.ai/docs/guides/features/server-tools/fusion
+            logo: openrouter.svg
+            description: Runs a panel of models, judges their outputs, and synthesizes one response behind a single model slug.
+            extra:
+              summary_tags: composition, judge, synthesis, model panel
+          - name: Sakana Fugu
+            homepage_url: https://sakana.ai/fugu-release/
+            logo: sakana.svg
+            description: One model API that selects, delegates, coordinates, verifies, and synthesizes across a model and agent pool.
+            extra:
+              summary_tags: mixture of models, delegation, verification, synthesis
+          - name: Microsoft MDASH
+            homepage_url: https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/
+            logo: microsoft.svg
+            description: Vertical cyber Mixture-of-Models system combining a specialist model, frontier escalation, and a large agent harness.
+            extra:
+              summary_tags: vertical MoM, cybersecurity, specialist, escalation
+          - name: Thesean Ship
+            homepage_url: https://docs.thesean.ai/
+            logo: thesean.svg
+            description: Best-execution endpoint applying inference-time optimization while preserving the selected model contract.
+            extra:
+              summary_tags: best execution, inference optimization, cost
 
   - name: Gateway and Execution
     subcategories:
@@ -375,6 +516,22 @@ categories:
             description: Rust AI gateway offering routing, guardrails, caching, rate limits, and observability.
             extra:
               summary_tags: Rust, gateway, cache, guardrails
+          - name: Higress AI Gateway
+            homepage_url: https://github.com/higress-group/higress
+            logo: higress.svg
+            repo_url: https://github.com/higress-group/higress
+            license: Apache-2.0
+            description: Alibaba-originated cloud-native AI gateway with multi-provider model routing, load balancing, token controls, caching, and observability.
+            extra:
+              summary_tags: gateway, cloud native, model routing, load balancing
+          - name: Helicone AI Gateway
+            homepage_url: https://github.com/Helicone/ai-gateway
+            logo: helicone.svg
+            repo_url: https://github.com/Helicone/ai-gateway
+            license: GPL-3.0
+            description: Open AI gateway with configurable model and provider routing, automatic fallbacks, latency-aware balancing, caching, and observability.
+            extra:
+              summary_tags: gateway, model routing, fallback, observability
           - name: Envoy AI Gateway
             homepage_url: https://github.com/envoyproxy/ai-gateway
             logo: envoy.svg
@@ -417,6 +574,35 @@ categories:
 
       - name: Inference Serving and Schedulers
         items:
+          - name: vLLM Router
+            homepage_url: https://github.com/vllm-project/router
+            logo: vllm-project.svg
+            repo_url: https://github.com/vllm-project/router
+            license: Apache-2.0
+            description: High-performance Rust router for vLLM fleets with cache-aware and load-aware policies, service discovery, and prefill-decode disaggregation.
+            extra:
+              summary_tags: serving, Rust, cache aware, disaggregation
+          - name: SGLang Model Gateway
+            homepage_url: https://github.com/sgl-project/sglang/tree/main/sgl-model-gateway
+            logo: sglang.svg
+            repo_url: https://github.com/sgl-project/sglang
+            license: Apache-2.0
+            description: Rust model gateway for SGLang supporting cache-aware and load-aware routing, multi-model inference, and prefill-decode disaggregation.
+            extra:
+              summary_tags: serving, Rust, cache aware, multi model, disaggregation
+          - name: NVIDIA Dynamo
+            homepage_url: https://github.com/ai-dynamo/dynamo
+            logo: nvidia.svg
+            repo_url: https://github.com/ai-dynamo/dynamo
+            description: Datacenter-scale inference orchestration with KV-aware routing, disaggregated serving, SLA-based planning, and multi-engine backends.
+            extra:
+              summary_tags: serving, KV cache, SLA, disaggregation, orchestration
+          - name: AMD Infera
+            homepage_url: https://github.com/AMD-AGI/Infera
+            logo: amd.svg
+            description: ROCm-native distributed serving mesh that coordinates KV-aware routing, prefill-decode disaggregation, cache tiering, and multiple inference engines.
+            extra:
+              summary_tags: serving, AMD Instinct, KV cache, disaggregation, multi engine
           - name: llm-d Router
             homepage_url: https://github.com/llm-d/llm-d-router
             logo: llm-d.svg
@@ -471,6 +657,17 @@ categories:
             description: Online pairwise preference evaluation attributing anonymous user choices back to routers under shared pools and budgets.
             extra:
               summary_tags: online evaluation, user preference, pairwise comparison
+          - name: CodeRouterBench
+            homepage_url: https://huggingface.co/datasets/Lance1573/CodeRouterBench
+            logo: acrouter.svg
+            repo_url: https://github.com/LanceZPF/agent-as-a-router
+            license: MIT
+            description: Living coding-routing environment with verified task-by-model outcomes, streaming evaluation, and regret-based comparison for agentic routers.
+            extra:
+              summary_tags: agentic, coding, streaming, regret, verified outcomes
+              other_links:
+                - name: Paper
+                  url: https://arxiv.org/abs/2606.22902
           - name: LLMRouterBench
             homepage_url: https://github.com/ynulihao/LLMRouterBench
             logo: llmrouterbench.svg
@@ -524,6 +721,7 @@ categories:
             homepage_url: https://github.com/Hunter-Wrynn/MMR-Bench
             logo: mmr-bench.svg
             repo_url: https://github.com/Hunter-Wrynn/MMR-Bench
+            license: MIT
             description: Budget-aware multimodal routing benchmark for OCR, visual question answering, and multimodal mathematics.
             extra:
               summary_tags: multimodal, VLM, OCR, VQA, math
@@ -539,7 +737,7 @@ categories:
               summary_tags: edge cloud, agent, utility, privacy, resource cost
           - name: ContinuityBench
             homepage_url: https://arxiv.org/abs/2607.15899
-            logo: arxiv.svg
+            logo: continuity-bench.svg
             description: Benchmark and systems study of stateful failover across multi-provider LLM routing.
             extra:
               summary_tags: reliability, stateful failover, provider routing, session
@@ -552,7 +750,8 @@ categories:
               summary_tags: model fusion, collaboration, thoughts, distillation
           - name: R2-Bench
             homepage_url: https://arxiv.org/abs/2602.02823
-            logo: arxiv.svg
+            logo: r2-bench.svg
+            repo_url: https://github.com/UCF-ML-Research/R2-Router
             description: Treats each model and output-length budget as a quality-cost curve rather than a static routing point.
             extra:
               summary_tags: reasoning budget, output length, quality cost curve

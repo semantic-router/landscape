@@ -25,7 +25,10 @@ The local site is available at `http://127.0.0.1:8000`.
 - `data.yml` contains products, projects, and benchmarks.
 - `settings.yml` contains branding, grouping, and display behavior.
 - `guide.yml` explains the taxonomy and links the representative research map.
+- `data/creators.json` records the creator or backing organization shown on each card.
+- `brand/` contains the independent transparent Landscape identity.
 - `logos/` contains the SVG assets required by Landscape2.
 
-Commercial state, project scope, licensing, and paper links were verified against official product documentation, official repositories, and primary publication pages on 2026-08-26.
+The build post-processing step keeps `All` as the default group in both grid and card views and injects creator metadata without misusing Landscape2's foundation-project maturity field.
 
+Commercial state, project scope, licensing, and paper links were verified against official product documentation, official repositories, and primary publication pages on 2026-08-26.

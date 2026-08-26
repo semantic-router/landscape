@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/settings.schema.json
 
-foundation: vLLM Semantic Router
+foundation: LLM Routing
 
 url: http://127.0.0.1:8000
 
@@ -15,32 +15,23 @@ colors:
 
 description: Explore the products, open-source systems, serving infrastructure, benchmarks, and research shaping LLM routing and Mixture-of-Models.
 
-featured_items:
-  - field: maturity
-    options:
-      - value: open-source
-        order: 1
-        label: Open Source
-      - value: managed
-        order: 2
-        label: Managed
-      - value: research
-        order: 3
-        label: Research
-      - value: evaluation
-        order: 4
-        label: Evaluation
-
 footer:
   links:
     github: "https://github.com/vllm-project/semantic-router"
     homepage: "https://vllm-sr.ai/"
-  logo: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  logo: "brand/llm-routing-landscape.png"
   text: "An evidence-led ecosystem map maintained by the vLLM Semantic Router community. Product claims remain vendor-reported unless independently benchmarked."
 
 grid_items_size: medium
 
 groups:
+  - name: All
+    alias: all
+    categories:
+      - Routing Products
+      - Open Routing Systems
+      - Gateway and Execution
+      - Evaluation and Community
   - name: Routing Products
     alias: products
     categories:
@@ -61,11 +52,12 @@ groups:
 header:
   links:
     github: "https://github.com/vllm-project/semantic-router"
-  logo: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  logo: "brand/llm-routing-landscape.png"
   motd: "**One Model API. Many Models Working Together.** Explore the decision and execution layers behind the emerging System of Models."
 
 hide_organization_section_in_projects: true
 
 images:
-  favicon: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
-  open_graph: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  open_graph: "http://127.0.0.1:8000/images/llm-routing-landscape.png"
+
+view_mode: grid

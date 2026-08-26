@@ -26,6 +26,6 @@ sed \
 
 PATH="$install_dir:$PATH" \
 LANDSCAPE_SETTINGS_FILE="$settings_file" \
-  "$repo_root/scripts/build-landscape.sh"
+  bash "$repo_root/scripts/build-landscape.sh"
 
 python3 "$repo_root/scripts/postprocess-build.py"

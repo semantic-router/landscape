@@ -1,7 +1,7 @@
 .PHONY: logos validate build serve clean
 
 logos:
-	./scripts/fetch-logos.sh
+	bash ./scripts/fetch-logos.sh
 
 validate:
 	landscape2 validate data --data-file data.yml
@@ -9,8 +9,8 @@ validate:
 	landscape2 validate guide --guide-file guide.yml
 
 build:
-	./scripts/build-landscape.sh
-	./scripts/postprocess-build.sh
+	bash ./scripts/build-landscape.sh
+	bash ./scripts/postprocess-build.sh
 
 serve:
 	landscape2 serve --landscape-dir build

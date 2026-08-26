@@ -31,24 +31,31 @@
   };
 
   const reorderCardSections = () => {
-    const sectionsByParent = new Map();
+    const groupsByParent = new Map();
 
     document.querySelectorAll('[id^="card_"]').forEach((section) => {
-      const parent = section.parentElement;
-      if (!parent) return;
-      if (!sectionsByParent.has(parent)) sectionsByParent.set(parent, []);
-      sectionsByParent.get(parent).push(section);
+      const group = section.parentElement;
+      const parent = group?.parentElement;
+      if (!group || !parent) return;
+      if (!groupsByParent.has(parent)) groupsByParent.set(parent, new Set());
+      groupsByParent.get(parent).add(group);
     });
 
-    sectionsByParent.forEach((sections, parent) => {
-      if (sections.length < 2) return;
-      const boundary = sections[sections.length - 1].nextSibling;
-      const sorted = sections
-        .map((section, index) => ({ section, index, rank: categoryRank(section.id) }))
+    groupsByParent.forEach((groupSet, parent) => {
+      const groups = [...groupSet];
+      if (groups.length < 2) return;
+
+      const boundary = groups[groups.length - 1].nextSibling;
+      const sorted = groups
+        .map((group, index) => ({
+          group,
+          index,
+          rank: categoryRank(group.querySelector('[id^="card_"]')?.id),
+        }))
         .sort((a, b) => a.rank - b.rank || a.index - b.index);
 
-      if (sorted.every(({ section }, index) => section === sections[index])) return;
-      sorted.forEach(({ section }) => parent.insertBefore(section, boundary));
+      if (sorted.every(({ group }, index) => group === groups[index])) return;
+      sorted.forEach(({ group }) => parent.insertBefore(group, boundary));
     });
   };
 
@@ -118,7 +125,7 @@
           if (window.location.pathname === "/" && landscape) {
             window.history.replaceState(window.history.state, "", "/");
             landscape.scrollTo({ top: 0, left: 0, behavior: "instant" });
-            requestAnimationFrame(syncCardTabToScroll);
+            queueScrollSync();
             return;
           }
           window.location.assign("/");
@@ -233,7 +240,7 @@
 
   const queueScrollSync = () => {
     if (scrollFrame) return;
-    scrollFrame = requestAnimationFrame(syncCardTabToScroll);
+    scrollFrame = setTimeout(syncCardTabToScroll, 16);
   };
 
   const attachCardScrollSync = () => {
@@ -255,6 +262,7 @@
     pinVllmSemanticRouter();
     attachCardScrollSync();
     initializeGridZoom();
+    syncCardTabToScroll();
   };
 
   const start = () => {
@@ -262,7 +270,7 @@
     const queue = () => {
       if (queued) return;
       queued = true;
-      requestAnimationFrame(() => {
+      queueMicrotask(() => {
         queued = false;
         refine();
       });
@@ -271,6 +279,11 @@
     new MutationObserver(queue).observe(document.body, { childList: true, subtree: true });
     window.addEventListener("popstate", queue);
     queue();
+
+    // Landscape2 mounts the card sections asynchronously. A short settling
+    // sequence makes the intended category order deterministic after the
+    // framework completes its initial render without leaving a background poll.
+    [100, 300, 700, 1500, 3000].forEach((delay) => setTimeout(queue, delay));
   };
 
   if (document.readyState === "loading") {

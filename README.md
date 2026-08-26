@@ -1,25 +1,68 @@
-# Intelligent Routing Landscape
+<div align="center">
 
-A living map of the intelligent-routing ecosystem across fragmented models, devices, locations, and preferences, built with [CNCF Landscape2](https://github.com/cncf/landscape2).
+<a href="https://the-semantic.ai/">
+  <img src="brand/intelligent-routing-mark-512.png" alt="Intelligent Routing Landscape" width="168" />
+</a>
 
-The premise is simple: intelligence is fragmenting, and routing is becoming the system that makes the pieces work together. The landscape maps the products, open systems, evaluation, and execution layers emerging around that shift.
+<h1>Intelligent Routing Landscape</h1>
 
-The index is neutral by design: grouping describes system role, not rank or endorsement. Commercial claims remain attributed to their publishers unless independently benchmarked.
+<p><strong>Map the fragmentation. Build the routing layer.</strong></p>
+
+<p>
+  A living map of the systems making fragmented models, compute,<br />
+  locations, and preferences work as one intelligent system.
+</p>
+
+<p>
+  <a href="https://the-semantic.ai/"><strong>Explore</strong></a> ·
+  <a href="https://the-semantic.ai/guide">Guide</a> ·
+  <a href="https://the-semantic.ai/stats">Stats</a> ·
+  <a href="https://github.com/semantic-router/landscape/issues">Suggest a project</a>
+</p>
+
+</div>
+
+---
+
+## About
+
+The AI stack is moving beyond one model and one kind of compute. Intelligent routing is becoming the decision layer between agents and an expanding pool of models, providers, runtimes, and hardware.
+
+This project makes that fast-moving ecosystem easier to see. It tracks open routing systems, commercial routing products, evaluation infrastructure, gateways, and serving systems in one evidence-led map built with [CNCF Landscape2](https://github.com/cncf/landscape2).
+
+## Explore the landscape
+
+| Layer | What belongs here |
+| --- | --- |
+| **Open Routing Systems** | Programmable routers, research toolboxes, and reusable routing methods. |
+| **Routing Products** | Managed routers, embedded model selection, and multi-model collaboration products. |
+| **Evaluation & Community** | Benchmarks, leaderboards, datasets, and shared evaluation infrastructure. |
+| **Gateway & Execution** | AI gateways, policy planes, inference routers, schedulers, and serving systems. |
+
+Start with the [interactive landscape](https://the-semantic.ai/), then use the [guide](https://the-semantic.ai/guide) for taxonomy and scope or [stats](https://the-semantic.ai/stats) for ecosystem activity.
 
 ## Inclusion standard
 
-This is a curated, auditable landscape rather than a scrape of every repository containing the word “router.” An entry needs a public artifact that can be checked today: maintained code, a reproducible benchmark, a primary research publication, or official product documentation. It must make a real decision across models, capabilities, providers, agents, or inference endpoints—not merely normalize APIs.
+The landscape is curated, not scraped. An entry must have a public artifact that can be verified today: maintained code, reproducible evaluation, a primary research publication, or official product documentation. It must make a meaningful decision across models, capabilities, providers, agents, or inference endpoints—not only normalize APIs.
 
-Research implementations can live in personal repositories when they are tied to a substantive paper or benchmark, but personal avatars are never used as project marks. Private announcements, unmaintained demos, generic gateways without routing behavior, and products without a verifiable public surface are excluded until stronger evidence appears.
+Research implementations in personal repositories are included when they support a substantive paper or benchmark. Project-owned artwork is preferred; personal avatars are never used as project logos. Unverifiable announcements, abandoned demos, and products without a public evidence surface are held until stronger evidence appears.
 
-The landscape separates four layers that are often conflated:
+Placement describes system role, not rank or endorsement. Product claims remain attributed to their publishers unless independently benchmarked.
 
-1. open programmable routing systems and research methods;
-2. routing products and multi-model collaboration;
-3. evaluation, benchmarks, and community infrastructure;
-4. gateways and inference-serving execution.
+## Contributing
 
-## Local preview
+See something missing, outdated, or misclassified? [Open an issue](https://github.com/semantic-router/landscape/issues) with the project name, primary link, proposed layer, and the evidence supporting it. Pull requests that update the source files directly are also welcome.
+
+The main sources of truth are:
+
+- `data.yml` — projects, products, benchmarks, links, and descriptions.
+- `settings.yml` — branding, groups, navigation, and display behavior.
+- `guide.yml` — taxonomy, scope, and the representative research map.
+- `data/creators.json` — the creator or backing organization shown on each card.
+- `logos/` — official project and organization artwork.
+- `brand/` — the independent Intelligent Routing Landscape identity and UI overrides.
+
+## Local development
 
 ```bash
 make logos
@@ -28,31 +71,16 @@ make build
 make serve
 ```
 
-The local site is available at `http://127.0.0.1:8000`.
+Open `http://127.0.0.1:8000` to preview the site. Run `make validate` before submitting data or logo changes.
 
-## Netlify deployment
+## Deployment
 
-Connect this repository to Netlify and use the default settings from
-`netlify.toml`. Netlify will install the pinned Landscape2 release, build the
-site, publish `build/`, and preserve client-side routes such as `/guide` and
-`/stats`.
+The repository is ready for Netlify through `netlify.toml`. Netlify installs the pinned Landscape2 release, builds the site, publishes `build/`, and preserves client-side routes such as `/guide` and `/stats`.
 
-For complete GitHub activity statistics, add a secret environment variable
-named `GITHUB_TOKENS` in Netlify. The value can be one or more comma-separated
-GitHub tokens with read access to public repositories. The site still builds
-without it; only repository activity metadata will be limited.
+For complete GitHub activity statistics, configure `GITHUB_TOKENS` as a Netlify secret. The site can build without it, but repository activity metadata will be limited.
 
-## Source of truth
+## Evidence and maintenance
 
-- `data.yml` contains products, projects, and benchmarks.
-- `settings.yml` contains branding, grouping, and display behavior.
-- `guide.yml` explains the taxonomy and links the representative research map.
-- `data/creators.json` records the creator or backing organization shown on each card.
-- `brand/` contains the independent transparent Landscape identity.
-- `logos/` contains the SVG assets required by Landscape2.
+Official repositories, product documentation, and primary publication pages are preferred over secondary summaries. The project records creator identity separately from product identity and uses a neutral fallback mark only when a project has no official artwork.
 
-Official project or organization artwork is used when available. Repositories without a project-owned mark use a clearly documented neutral fallback under `brand/project-marks/`; personal profile images are never used as project logos.
-
-The build post-processing step keeps `All` as the default group in both grid and card views and injects creator metadata without misusing Landscape2's foundation-project maturity field.
-
-Commercial state, project scope, licensing, and paper links were verified against official product documentation, official repositories, and primary publication pages on 2026-08-26. Completeness is therefore defined against this public-evidence standard and remains a moving target as the category evolves.
+The ecosystem changes quickly. Completeness is a maintained target, not a permanent claim—and that is exactly why this landscape exists.

@@ -1,0 +1,733 @@
+{
+  "updated": "2026-08-27",
+  "scope": "Peer-reviewed and accepted work on routing across external language models. Findings, industry tracks, and workshops are labeled explicitly.",
+  "papers": [
+    {
+      "year": 2024,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+      "summary": "Routes each query between small and large models using estimated difficulty and a tunable quality target.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/b47d93c99fa22ac0b377578af0a1f63a-Abstract-Conference.html"
+    },
+    {
+      "year": 2024,
+      "venue": "NAACL",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "Routing to the Expert: Efficient Reward-guided Ensemble of Large Language Models",
+      "short_title": "ZOOTER",
+      "summary": "Distills reward signals into a lightweight router for selecting among specialized language models.",
+      "paper_url": "https://aclanthology.org/2024.naacl-long.109/"
+    },
+    {
+      "year": 2024,
+      "venue": "NAACL",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "OrchestraLLM: Efficient Orchestration of Language Models for Dialogue State Tracking",
+      "summary": "Uses domain-aware routing between specialized and general models for dialogue state tracking.",
+      "paper_url": "https://aclanthology.org/2024.naacl-long.79/"
+    },
+    {
+      "year": 2024,
+      "venue": "COLM",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "Large Language Model Routing with Benchmark Datasets",
+      "short_title": "RouterBench",
+      "summary": "Introduces a benchmark dataset and evaluation framework for cost-quality model routing.",
+      "paper_url": "https://openreview.net/pdf?id=Zb0ajZ7vAt",
+      "code_url": "https://github.com/withmartian/routerbench",
+      "landscape": true
+    },
+    {
+      "year": 2024,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "RouterDC: Query-Based Router by Dual Contrastive Learning for Assembling Large Language Models",
+      "summary": "Learns aligned query and model representations through dual contrastive objectives.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/7a641b8ec86162fc875fb9f6456a542f-Abstract-Conference.html",
+      "code_url": "https://github.com/shuhao02/RouterDC",
+      "landscape": true
+    },
+    {
+      "year": 2024,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "Smoothie: Label Free Language Model Routing",
+      "summary": "Infers model quality from agreement structure in output embeddings without labeled routing data.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6b57a990462df5afa58d64ce2709db9-Abstract-Conference.html"
+    },
+    {
+      "year": 2024,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "AutoMix: Automatically Mixing Language Models",
+      "summary": "Uses self-verification and a partially observable decision process to escalate difficult queries.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ecda225cb187b40ea8edc1f46b03ffda-Abstract-Conference.html"
+    },
+    {
+      "year": 2024,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "Efficient Contextual LLM Cascades through Budget-Constrained Policy Learning",
+      "short_title": "TREACLE",
+      "summary": "Jointly selects models and prompting strategies under explicit monetary and latency budgets.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a6deba3b2408af45b3f9994c2152b862-Abstract-Conference.html"
+    },
+    {
+      "year": 2024,
+      "venue": "ACL Insights",
+      "status": "Workshop",
+      "theme": "Evaluation & safety",
+      "title": "Harnessing the Power of Multiple Minds: Lessons Learned from LLM Routing",
+      "summary": "Reports negative results and evaluation lessons that challenge optimistic router assumptions.",
+      "paper_url": "https://aclanthology.org/2024.insights-1.15/"
+    },
+    {
+      "year": 2025,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "RouteLLM: Learning to Route LLMs from Preference Data",
+      "summary": "Learns cost-quality routing policies from human preference comparisons between model outputs.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html",
+      "code_url": "https://github.com/lm-sys/RouteLLM",
+      "landscape": true
+    },
+    {
+      "year": 2025,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "GraphRouter: A Graph-based Router for LLM Selections",
+      "summary": "Models relationships among queries, tasks, and candidate models as a graph for generalizable selection.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/41b6674c28a9b93ec8d22a53ca25bc3b-Abstract-Conference.html",
+      "code_url": "https://github.com/ulab-uiuc/GraphRouter",
+      "landscape": true
+    },
+    {
+      "year": 2025,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "EmbedLLM: Learning Compact Representations of Large Language Models",
+      "summary": "Learns reusable model embeddings for routing and performance forecasting across benchmarks.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/bf5e4b85d203481d6e37bd32d9600162-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "ICML",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute",
+      "summary": "Allocates test-time compute across models according to query difficulty and resource constraints.",
+      "paper_url": "https://proceedings.mlr.press/v267/ding25d.html",
+      "code_url": "https://github.com/microsoft/best-route-llm",
+      "landscape": true
+    },
+    {
+      "year": 2025,
+      "venue": "ICML",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "Learning to Route LLMs with Confidence Tokens",
+      "summary": "Trains models to expose confidence tokens that support routing, escalation, and rejection.",
+      "paper_url": "https://proceedings.mlr.press/v267/chuang25b.html"
+    },
+    {
+      "year": 2025,
+      "venue": "ICML",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "A Unified Approach to Routing and Cascading for LLMs",
+      "summary": "Places one-shot routing and sequential cascades inside a common decision-theoretic framework.",
+      "paper_url": "https://proceedings.mlr.press/v267/dekoninck25a.html"
+    },
+    {
+      "year": 2025,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Agents & collaboration",
+      "title": "MasRouter: Learning to Route LLMs for Multi-Agent Systems",
+      "summary": "Selects collaboration topology, agent roles, and model backbones for multi-agent workloads.",
+      "paper_url": "https://aclanthology.org/2025.acl-long.757/"
+    },
+    {
+      "year": 2025,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "IRT-Router: A Learning-to-Rank Framework for LLM Routing",
+      "summary": "Uses item-response-theory signals to estimate query difficulty and rank candidate models.",
+      "paper_url": "https://aclanthology.org/2025.acl-long.761/",
+      "code_url": "https://github.com/Mercidaiha/IRT-Router",
+      "landscape": true
+    },
+    {
+      "year": 2025,
+      "venue": "NAACL",
+      "status": "Main",
+      "theme": "Online learning",
+      "title": "MixLLM: Dynamic Routing in Mixed Large Language Models",
+      "summary": "Applies contextual bandits to a model pool whose composition and feedback change over time.",
+      "paper_url": "https://aclanthology.org/2025.naacl-long.545/"
+    },
+    {
+      "year": 2025,
+      "venue": "EMNLP",
+      "status": "Findings",
+      "theme": "Evaluation & safety",
+      "title": "RouterEval: A Comprehensive Benchmark for Routing LLMs",
+      "summary": "Evaluates routers across heterogeneous tasks, model pools, cost assumptions, and routing methods.",
+      "paper_url": "https://aclanthology.org/2025.findings-emnlp.208/",
+      "landscape": true
+    },
+    {
+      "year": 2025,
+      "venue": "EMNLP",
+      "status": "Findings",
+      "theme": "Online learning",
+      "title": "Adaptive LLM Routing under Budget Constraints",
+      "short_title": "PILOT",
+      "summary": "Combines an offline preference prior with online contextual-bandit updates under a budget.",
+      "paper_url": "https://aclanthology.org/2025.findings-emnlp.1301/"
+    },
+    {
+      "year": 2025,
+      "venue": "EMNLP",
+      "status": "Findings",
+      "theme": "Dynamic pools",
+      "title": "RadialRouter: Structured Representations for Generalizable LLM Routing",
+      "summary": "Structures query and model representations to improve generalization as the model pool changes.",
+      "paper_url": "https://aclanthology.org/2025.findings-emnlp.787/"
+    },
+    {
+      "year": 2025,
+      "venue": "EMNLP",
+      "status": "Industry",
+      "theme": "Cascades & test-time",
+      "title": "Select-then-Route: Taxonomy Guided Routing for LLMs",
+      "summary": "First narrows the candidate pool using a task taxonomy, then applies a routing cascade.",
+      "paper_url": "https://aclanthology.org/2025.emnlp-industry.28/"
+    },
+    {
+      "year": 2025,
+      "venue": "COLM",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "Rerouting LLM Routers",
+      "summary": "Shows that adversarial gadget strings can manipulate router control flow and model selection.",
+      "paper_url": "https://openreview.net/pdf?id=U6C7odo5SX"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "Cost-Aware Contrastive Routing for LLMs",
+      "short_title": "CSCR",
+      "summary": "Learns shared query-model embeddings and cost bands for routing through dynamic model pools.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e46eb6403af68506331f941282d838aa-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Online learning",
+      "title": "Causal LLM Routing: End-to-End Regret Minimization from Observational Data",
+      "summary": "Learns routing policies from logged, partial observational feedback rather than a full score matrix.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/357774d53e5ee21c5f08ba779e3b5dd9-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Online learning",
+      "title": "Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving",
+      "short_title": "PORT",
+      "summary": "Provides training-free online routing with approximate retrieval and serving-scale guarantees.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c878e34a1b2095ae8177961ba24d642d-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "Let the LLM Stick to Its Strengths: Learning to Route Economical LLM",
+      "short_title": "LLMRec",
+      "summary": "Frames model routing as recommendation to handle heterogeneous capabilities and unseen models.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/305a5630c29aaca434e3415fc4638eb2-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "RAGRouter: Learning to Route Retrieval-Augmented Language Models",
+      "summary": "Adds retrieved evidence to the routing signal instead of selecting from the user query alone.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1759a83b007f0685c3fbc460fa1b6395-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "Principled Model Routing for Unknown Mixtures of Source Domains",
+      "summary": "Connects routing to domain adaptation and studies guarantees under unknown source mixtures.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/39c60dda48ebf0a2e5dda52ce08eb5c8-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Systems co-design",
+      "title": "MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees",
+      "summary": "Learns routing online while enforcing service-level targets across a heterogeneous model zoo.",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/4dd1d9b841712bd37b833559f041530c-Abstract-Conference.html"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS",
+      "status": "Main",
+      "theme": "Agents & collaboration",
+      "title": "Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning",
+      "summary": "Trains an agentic router to iteratively select, query, and aggregate multiple models.",
+      "paper_url": "https://arxiv.org/abs/2506.09033",
+      "code_url": "https://github.com/ulab-uiuc/Router-R1",
+      "landscape": true
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "Universal Model Routing for Efficient LLM Inference",
+      "short_title": "UniRoute",
+      "summary": "Learns transferable correctness representations that support routing across changing model pools.",
+      "paper_url": "https://openreview.net/forum?id=ka82fvJ5f1"
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "DiSRouter: Distributed Self-Routing for LLM Selections",
+      "summary": "Replaces a single central router with a network of models that expose their own capability signals.",
+      "paper_url": "https://iclr.cc/virtual/2026/poster/10010146"
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing",
+      "summary": "Corrects bias between preference feedback and gold-standard task evaluation for router training.",
+      "paper_url": "https://iclr.cc/virtual/2026/poster/10007190"
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs",
+      "summary": "Jointly selects a reasoning model and reasoning budget using ability and difficulty estimates.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b1f7288854d3bd476c17725c2d85967f-Abstract-Conference.html"
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Cascades & test-time",
+      "title": "TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks",
+      "summary": "Routes individual reasoning steps between models using process-level quality signals.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/06b33e277e6c48f361621717c49cde22-Abstract-Conference.html"
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "Routing, Cascades, and User Choice for LLMs",
+      "summary": "Studies routing as a strategic interaction between providers, routing policies, and user choice.",
+      "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/564a224e88f2490f3c1deaae877d37e3-Abstract-Conference.html"
+    },
+    {
+      "year": 2026,
+      "venue": "AAAI",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "Breaking Model Lock-in: Universal Routing for Dynamic LLM Pools",
+      "short_title": "ZeroRouter",
+      "summary": "Supports zero-shot onboarding of new models through a universal latent capability space.",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40970"
+    },
+    {
+      "year": 2026,
+      "venue": "AAAI",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "ICL-Router: In-Context Learning for Dynamic LLM Routing",
+      "summary": "Builds model representations in context so a router can incorporate new models with little retraining.",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40628"
+    },
+    {
+      "year": 2026,
+      "venue": "AAAI",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "CP-Router: Conformal Prediction for Reliable LLM Routing",
+      "summary": "Uses conformal uncertainty to decide when workloads require a stronger reasoning model.",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40589"
+    },
+    {
+      "year": 2026,
+      "venue": "AAAI",
+      "status": "Main",
+      "theme": "Online learning",
+      "title": "Online Multi-LLM Selection via Contextual Bandits Under Unstructured Context Evolution",
+      "summary": "Learns sequential model choices online as unstructured workload context evolves.",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/39672"
+    },
+    {
+      "year": 2026,
+      "venue": "AAAI",
+      "status": "Main",
+      "theme": "Systems co-design",
+      "title": "PRISM: Privacy-Aware Routing for Adaptive Cloud–Edge LLM Inference",
+      "summary": "Selects local, cloud, or collaborative paths while treating privacy as a routing objective.",
+      "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40041"
+    },
+    {
+      "year": 2026,
+      "venue": "EACL",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "How Robust Are Router-LLMs?",
+      "summary": "Evaluates privacy leakage, safety failures, adversarial examples, and backdoors in learned routers.",
+      "paper_url": "https://aclanthology.org/2026.eacl-long.351/"
+    },
+    {
+      "year": 2026,
+      "venue": "EACL",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "SEMIROUTER: Sparse-Data Enhanced Routing for Large Language Models",
+      "summary": "Improves routing when labeled model-query performance observations are sparse.",
+      "paper_url": "https://aclanthology.org/2026.eacl-long.228/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Dynamic pools",
+      "title": "TRouter: Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios",
+      "summary": "Synthesizes task-profile data to improve routing when real observations are scarce.",
+      "paper_url": "https://aclanthology.org/2026.acl-long.1007/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Systems co-design",
+      "title": "FLARE: Fine-Grained Length-Aware Routing for Resource-Efficient Heterogeneous LLM Serving",
+      "summary": "Uses generation length and serving cost to route across heterogeneous model deployments.",
+      "paper_url": "https://aclanthology.org/2026.acl-long.1018/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Agents & collaboration",
+      "title": "EvoRoute: Experience-Driven Self-Routing LLM Agent Systems",
+      "summary": "Lets agent systems improve routing decisions from accumulated execution experience.",
+      "paper_url": "https://aclanthology.org/2026.acl-long.1771/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Agents & collaboration",
+      "title": "RouteMoA: Dynamic Routing without Pre-Inference Boosts Efficient Mixture-of-Agents",
+      "summary": "Selects agent collaboration paths without requiring expensive model probing before inference.",
+      "paper_url": "https://aclanthology.org/2026.acl-long.558/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Main",
+      "theme": "Agents & collaboration",
+      "title": "MTRouter: Multi-Turn LLM Routing with Conversation-Aware Decisions",
+      "summary": "Uses conversation history and temporal signals rather than routing each turn independently.",
+      "paper_url": "https://aclanthology.org/2026.acl-long.2045/",
+      "code_url": "https://github.com/ZhangYiqun018/MTRouter",
+      "landscape": true
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Findings",
+      "theme": "Agents & collaboration",
+      "title": "ATLAS: Orchestrating Heterogeneous Models and Tools",
+      "summary": "Extends model routing into joint orchestration across models, tools, and execution paths.",
+      "paper_url": "https://aclanthology.org/2026.findings-acl.867/"
+    },
+    {
+      "year": 2026,
+      "venue": "ACL",
+      "status": "Findings",
+      "theme": "Evaluation & safety",
+      "title": "LLMRouterBench: A Unified Benchmark for Large Language Model Routing",
+      "summary": "Standardizes router comparison across tasks, candidate pools, objectives, and evaluation assumptions.",
+      "paper_url": "https://aclanthology.org/2026.findings-acl.1881/",
+      "code_url": "https://github.com/ynulihao/LLMRouterBench",
+      "landscape": true
+    },
+    {
+      "year": 2026,
+      "venue": "ICML",
+      "status": "Main",
+      "theme": "Predictive routing",
+      "title": "R2-Router: Efficient and Interpretable Large Language Model Routing",
+      "summary": "Learns efficient routing decisions with interpretable signals over query and model capabilities.",
+      "paper_url": "https://openreview.net/forum?id=S3m1tSp8F4",
+      "code_url": "https://github.com/UCF-ML-Research/R2-Router",
+      "landscape": true
+    },
+    {
+      "year": 2026,
+      "venue": "ICLR",
+      "status": "Main",
+      "theme": "Evaluation & safety",
+      "title": "RouterArena: Benchmarking and Understanding LLM Routing",
+      "summary": "Provides a common arena for comparing routing algorithms over shared prediction and evaluation protocols.",
+      "paper_url": "https://iclr.cc/virtual/2026/poster/10011126",
+      "code_url": "https://github.com/RouteWorks/RouterArena",
+      "landscape": true
+    },
+    {
+      "year": 2026,
+      "venue": "MLSys",
+      "status": "Main",
+      "theme": "Systems co-design",
+      "title": "BOute: Cost-Efficient LLM Serving with Heterogeneous LLMs and GPUs via Multi-Objective Bayesian Optimization",
+      "summary": "Co-optimizes query routing and model placement across heterogeneous models and accelerators.",
+      "paper_url": "https://proceedings.mlsys.org/paper_files/paper/2026/hash/ed1d3d4c64dc1b95332a8cde3f2a0bdf-Abstract-Conference.html"
+    },
+    {
+      "year": 2026,
+      "venue": "COLM",
+      "status": "Accepted",
+      "theme": "Agents & collaboration",
+      "title": "FlexRouter: Learning Complementary Model Sets for Flexible LLM Routing",
+      "summary": "Routes to complementary subsets of models instead of treating selection as a single-winner decision.",
+      "paper_url": "https://colmweb.org/AcceptedPapers.html"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "vLLM Semantic Router: Signal Driven Decision Routing for Mixture-of-Modality Models",
+      "short_title": "vLLM Semantic Router",
+      "summary": "Composes heterogeneous workload signals into inspectable routing policies across cost, privacy, latency, and safety constraints.",
+      "paper_url": "https://arxiv.org/abs/2603.04444",
+      "code_url": "https://github.com/vllm-project/semantic-router",
+      "landscape": true,
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Vision paper",
+      "theme": "Systems co-design",
+      "title": "The Workload-Router-Pool Architecture for LLM Inference Optimization: A Vision Paper from the vLLM Semantic Router Project",
+      "short_title": "Workload–Router–Pool Architecture",
+      "summary": "Frames inference optimization as co-design across semantic workload demand, routing decisions, and the live model-and-hardware pool.",
+      "paper_url": "https://arxiv.org/abs/2603.21354",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Evaluation & safety",
+      "title": "Visual Confused Deputy: Exploiting and Defending Perception Failures in Computer-Using Agents",
+      "short_title": "Visual Confused Deputy",
+      "summary": "Formalizes perception-induced unsafe action in computer-use agents and evaluates a dual-channel guardrail over target perception and action reasoning.",
+      "paper_url": "https://arxiv.org/abs/2603.14707",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Agents & collaboration",
+      "title": "Outcome-Aware Tool Selection for Semantic Routers: Latency-Constrained Learning Without LLM Inference",
+      "short_title": "Outcome-Aware Tool Selection",
+      "summary": "Learns outcome-aware tool ranking offline while keeping serving-time semantic routing within a single-digit-millisecond CPU budget.",
+      "paper_url": "https://arxiv.org/abs/2603.13426",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Agents & collaboration",
+      "title": "Adaptive Vision-Language Model Routing for Computer Use Agents",
+      "short_title": "Adaptive VLM Routing",
+      "summary": "Estimates each computer-use action's difficulty and routes it to the least expensive vision-language model that meets a reliability target.",
+      "paper_url": "https://arxiv.org/abs/2603.12823",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "98× Faster LLM Routing Without a Dedicated GPU: Flash Attention, Prompt Compression, and Near-Streaming for the vLLM Semantic Router",
+      "short_title": "98× Faster LLM Routing",
+      "summary": "Combines attention, prompt-compression, and request-streaming optimizations so routing can share serving hardware instead of requiring a dedicated GPU.",
+      "paper_url": "https://arxiv.org/abs/2603.12646",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "inference-fleet-sim: A Queueing-Theory-Grounded Fleet Capacity Planner for LLM Inference",
+      "short_title": "inference-fleet-sim",
+      "summary": "Uses queueing models and discrete-event simulation to size multi-pool inference fleets against tail-latency objectives.",
+      "paper_url": "https://arxiv.org/abs/2603.16054",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "FleetOpt: Analytical Fleet Provisioning for LLM Inference with Compress-and-Route as Implementation Mechanism",
+      "short_title": "FleetOpt",
+      "summary": "Derives a minimum-cost two-pool fleet from workload and tail-latency constraints, then makes the operating boundary deployable through compress-and-route.",
+      "paper_url": "https://arxiv.org/abs/2603.16514",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "The 1/W Law: An Analytical Study of Context-Length Routing Topology and GPU Generation Gains for LLM Inference Energy Efficiency",
+      "short_title": "The 1/W Law",
+      "summary": "Models how context-window growth changes inference energy efficiency and motivates context-length-aware routing across serving pools.",
+      "paper_url": "https://arxiv.org/abs/2603.17280",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Evaluation & safety",
+      "title": "Conflict-Free Policy Languages for Probabilistic ML Predicates: A Framework and Case Study with the Semantic Router DSL",
+      "short_title": "Conflict-Free Routing Policies",
+      "summary": "Detects and prevents overlapping probabilistic predicates so declarative routing policies remain deterministic and auditable.",
+      "paper_url": "https://arxiv.org/abs/2603.18174",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Agents & collaboration",
+      "title": "From Inference Routing to Agent Orchestration: Declarative Policy Compilation with Cross-Layer Verification",
+      "short_title": "Declarative Agent Orchestration",
+      "summary": "Compiles one policy source into verified decision nodes across agent workflows, serving infrastructure, and protocol boundaries.",
+      "paper_url": "https://arxiv.org/abs/2603.27299",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Agents & collaboration",
+      "title": "Knowledge Access Beats Model Size: Memory Augmented Routing for Persistent AI Agents",
+      "short_title": "Memory-Augmented Routing",
+      "summary": "Routes persistent user queries through memory and retrieval before model escalation, treating knowledge access as a first-class routing signal.",
+      "paper_url": "https://arxiv.org/abs/2603.23013",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "SIGIR",
+      "status": "Industry track",
+      "theme": "Evaluation & safety",
+      "title": "Fast and Faithful: Real-Time Verification for Long-Document Retrieval-Augmented Generation Systems",
+      "short_title": "Fast and Faithful",
+      "summary": "Evaluates low-latency verification for long-context RAG, an adjacent reliability signal that can gate or reroute generated answers.",
+      "paper_url": "https://arxiv.org/abs/2603.23508",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2026,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "Token-Budget-Aware Pool Routing for Cost-Efficient LLM Inference",
+      "short_title": "Token-Budget-Aware Pool Routing",
+      "summary": "Predicts request token budgets and dispatches traffic across short- and long-context pools to reduce cost while avoiding KV-cache failures.",
+      "paper_url": "https://arxiv.org/abs/2604.09613",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2025,
+      "venue": "NeurIPS MLForSys",
+      "status": "Workshop",
+      "theme": "Cascades & test-time",
+      "title": "When to Reason: Semantic Router for vLLM",
+      "short_title": "When to Reason",
+      "summary": "Classifies whether a request benefits from explicit reasoning and activates the more expensive reasoning path only when needed.",
+      "paper_url": "https://arxiv.org/abs/2510.08731",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2025,
+      "venue": "arXiv",
+      "status": "Technical report",
+      "theme": "Systems co-design",
+      "title": "Category-Aware Semantic Caching for Heterogeneous LLM Workloads",
+      "short_title": "Category-Aware Semantic Caching",
+      "summary": "Adapts similarity thresholds, retention, and cache quotas to semantic workload classes instead of applying one cache policy globally.",
+      "paper_url": "https://arxiv.org/abs/2510.26835",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2025,
+      "venue": "IETF",
+      "status": "Internet-Draft",
+      "theme": "Systems co-design",
+      "title": "Semantic Inference Routing Protocol (SIRP)",
+      "short_title": "SIRP",
+      "summary": "Specifies content-level classification and semantic routing signals as an interoperable inference-routing protocol framework.",
+      "paper_url": "https://datatracker.ietf.org/doc/html/draft-chen-nmrg-semantic-inference-routing",
+      "source_url": "https://vllm-sr.ai/publications"
+    },
+    {
+      "year": 2025,
+      "venue": "IETF",
+      "status": "Internet-Draft",
+      "theme": "Systems co-design",
+      "title": "Multi-Provider Extensions for Agentic AI Inference APIs",
+      "short_title": "Multi-Provider Inference API",
+      "summary": "Defines API extensions for selecting and coordinating inference providers in agentic systems across administrative boundaries.",
+      "paper_url": "https://www.ietf.org/archive/id/draft-chen-nmrg-multi-provider-inference-api-00.html",
+      "source_url": "https://vllm-sr.ai/publications"
+    }
+  ]
+}

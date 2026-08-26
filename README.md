@@ -16,6 +16,7 @@
 <p>
   <a href="https://the-semantic.ai/"><strong>Explore</strong></a> ·
   <a href="https://the-semantic.ai/guide">Guide</a> ·
+  <a href="https://the-semantic.ai/research/">Research</a> ·
   <a href="https://the-semantic.ai/stats">Stats</a> ·
   <a href="https://github.com/semantic-router/landscape/issues">Suggest a project</a>
 </p>
@@ -39,7 +40,7 @@ This project makes that fast-moving ecosystem easier to see. It tracks open rout
 | **Evaluation & Community** | Benchmarks, leaderboards, datasets, and shared evaluation infrastructure. |
 | **Gateway & Execution** | AI gateways, policy planes, inference routers, schedulers, and serving systems. |
 
-Start with the [interactive landscape](https://the-semantic.ai/), then use the [guide](https://the-semantic.ai/guide) for taxonomy and scope or [stats](https://the-semantic.ai/stats) for ecosystem activity.
+Start with the [interactive landscape](https://the-semantic.ai/), use the [guide](https://the-semantic.ai/guide) for taxonomy and scope, browse [research](https://the-semantic.ai/research/) for the 2024–2026 paper map, or inspect [stats](https://the-semantic.ai/stats) for ecosystem activity.
 
 ## Inclusion standard
 
@@ -58,6 +59,7 @@ The main sources of truth are:
 - `data.yml` — projects, products, benchmarks, links, and descriptions.
 - `settings.yml` — branding, groups, navigation, and display behavior.
 - `guide.yml` — taxonomy, scope, and the representative research map.
+- `data/research.json` — structured paper records for the Research page.
 - `data/creators.json` — the creator or backing organization shown on each card.
 - `logos/` — official project and organization artwork.
 - `brand/` — the independent Intelligent Routing Landscape identity and UI overrides.

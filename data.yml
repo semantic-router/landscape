@@ -83,22 +83,28 @@ categories:
                   url: https://arxiv.org/abs/2406.18665
           - name: Lemonade Router
             homepage_url: https://github.com/lemonade-sdk/lemonade/blob/main/docs/dev/router-policy.md
-            logo: amd.svg
+            logo: lemonade.svg
             repo_url: https://github.com/lemonade-sdk/lemonade
             license: Apache-2.0
             description: Deterministic, semantic, classifier, and LLM-as-router policies spanning local and cloud candidates with decision traces.
             extra:
               summary_tags: edge cloud, local AI, heterogeneous devices, policy
-          - name: EdgeClaw and ClawXRouter
+          - name: EdgeClaw
             homepage_url: https://github.com/OpenBMB/EdgeClaw
-            logo: openbmb.svg
+            logo: edgeclaw.svg
             repo_url: https://github.com/OpenBMB/EdgeClaw
             license: MIT
-            additional_repos:
-              - repo_url: https://github.com/OpenBMB/ClawXRouter
-            description: Edge-cloud agent system and router for cost-aware and privacy-aware collaboration across device and cloud models.
+            description: Edge-cloud collaborative personal AI assistant with local memory, privacy tiers, and cost-aware model routing built on OpenClaw.
             extra:
-              summary_tags: edge cloud, agent sessions, privacy, local AI
+              summary_tags: edge cloud, personal agent, memory, privacy, cost-aware routing
+          - name: ClawXRouter
+            homepage_url: https://github.com/OpenBMB/ClawXRouter
+            logo: clawxrouter.svg
+            repo_url: https://github.com/OpenBMB/ClawXRouter
+            license: MIT
+            description: OpenClaw routing plugin combining five-level cost-aware model selection with three-tier privacy routing across edge and cloud.
+            extra:
+              summary_tags: edge cloud, agent routing, privacy tiers, cost-aware routing, OpenClaw
           - name: Aurelio Semantic Router
             homepage_url: https://github.com/aurelio-labs/semantic-router
             logo: aurelio.svg

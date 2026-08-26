@@ -31,27 +31,24 @@
   };
 
   const reorderCardSections = () => {
-    const categoryContainers = [
-      ...new Set(
-        [...document.querySelectorAll('[id^="card_"]')]
-          .map((section) => section.parentElement)
-          .filter(Boolean),
-      ),
-    ];
-    const containersByParent = new Map();
+    const sectionsByParent = new Map();
 
-    categoryContainers.forEach((container) => {
-      const parent = container.parentElement;
+    document.querySelectorAll('[id^="card_"]').forEach((section) => {
+      const parent = section.parentElement;
       if (!parent) return;
-      if (!containersByParent.has(parent)) containersByParent.set(parent, []);
-      containersByParent.get(parent).push(container);
+      if (!sectionsByParent.has(parent)) sectionsByParent.set(parent, []);
+      sectionsByParent.get(parent).push(section);
     });
 
-    containersByParent.forEach((containers) => {
-      stableReorder(containers, (container) => {
-        const firstSection = container.querySelector('[id^="card_"]');
-        return categoryRank(firstSection?.id || "");
-      });
+    sectionsByParent.forEach((sections, parent) => {
+      if (sections.length < 2) return;
+      const boundary = sections[sections.length - 1].nextSibling;
+      const sorted = sections
+        .map((section, index) => ({ section, index, rank: categoryRank(section.id) }))
+        .sort((a, b) => a.rank - b.rank || a.index - b.index);
+
+      if (sorted.every(({ section }, index) => section === sections[index])) return;
+      sorted.forEach(({ section }) => parent.insertBefore(section, boundary));
     });
   };
 
@@ -102,6 +99,33 @@
           activateCategory();
         });
       });
+  };
+
+  const makeBrandLogoAStableHomeLink = () => {
+    const controls = document.querySelectorAll(
+      'a[aria-label="Go to Explore page"], button[aria-label*="Explore"]',
+    );
+
+    controls.forEach((control) => {
+      if (control.dataset.stableHomeLink === "true") return;
+      control.dataset.stableHomeLink = "true";
+      control.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const landscape = document.getElementById("landscape");
+          if (window.location.pathname === "/" && landscape) {
+            window.history.replaceState(window.history.state, "", "/");
+            landscape.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            requestAnimationFrame(syncCardTabToScroll);
+            return;
+          }
+          window.location.assign("/");
+        },
+        true,
+      );
+    });
   };
 
   const pinVllmSemanticRouter = () => {
@@ -161,6 +185,25 @@
   let scrollFrame;
   let observedLandscape;
 
+  const reflectCardTabSelection = (hash) => {
+    const menu = document.getElementById("menu");
+    const target = menu?.querySelector(`#btn_${CSS.escape(hash)}`);
+    if (!target || target.disabled) return;
+
+    const buttons = [...menu.querySelectorAll('button[id^="btn_"]')];
+    const selectedButton = buttons.find((button) => button.disabled);
+    const selectedClass = [...(selectedButton?.classList || [])].find((className) =>
+      className.includes("_selected_"),
+    );
+
+    if (selectedButton) {
+      selectedButton.disabled = false;
+      if (selectedClass) selectedButton.classList.remove(selectedClass);
+    }
+    if (selectedClass) target.classList.add(selectedClass);
+    target.disabled = true;
+  };
+
   const syncCardTabToScroll = () => {
     scrollFrame = undefined;
 
@@ -180,11 +223,12 @@
     const activeSection =
       [...sections].reverse().find((section) => section.getBoundingClientRect().top <= activationLine) || sections[0];
     const hash = activeSection.id.replace(/^card_/, "");
-    if (!hash || window.location.hash === `#${hash}`) return;
+    if (!hash) return;
 
-    const nextUrl = `${window.location.pathname}${window.location.search}#${hash}`;
-    window.history.replaceState(window.history.state, "", nextUrl);
-    window.dispatchEvent(new PopStateEvent("popstate", { state: window.history.state }));
+    // Keep the navigation highlight aligned with the visible card section without
+    // changing browser history. Dispatching routing events here creates a feedback
+    // loop: Landscape2 scrolls in response, which would trigger another route update.
+    reflectCardTabSelection(hash);
   };
 
   const queueScrollSync = () => {
@@ -199,6 +243,7 @@
     observedLandscape?.removeEventListener("scroll", queueScrollSync);
     observedLandscape = landscape;
     observedLandscape.addEventListener("scroll", queueScrollSync, { passive: true });
+    queueScrollSync();
   };
 
   const refine = () => {
@@ -206,10 +251,10 @@
     reorderCardSections();
     reorderCategoryNavigation();
     makeCategoryTitlesInteractive();
+    makeBrandLogoAStableHomeLink();
     pinVllmSemanticRouter();
     attachCardScrollSync();
     initializeGridZoom();
-    queueScrollSync();
   };
 
   const start = () => {

@@ -15,13 +15,13 @@ if [[ ! -x "$landscape2_bin" ]]; then
   LANDSCAPE2_UNMANAGED_INSTALL="$install_dir" sh "$installer" --quiet
 fi
 
-deployment_url="${DEPLOY_PRIME_URL:-${URL:-http://127.0.0.1:8000}}"
+deployment_url="${URL:-${DEPLOY_PRIME_URL:-http://127.0.0.1:8000}}"
 settings_file="$(mktemp "$repo_root/.netlify-settings.XXXXXX.yml")"
 trap 'rm -f "$settings_file" "${installer:-}"' EXIT
 
 sed \
   -e "s|^url: .*$|url: \"$deployment_url\"|" \
-  -e "s|^  open_graph: .*$|  open_graph: \"$deployment_url/images/intelligent-routing-mark-512.png\"|" \
+  -e "s|^  open_graph: .*$|  open_graph: \"$deployment_url/images/intelligent-routing-og.png\"|" \
   "$repo_root/settings.yml" > "$settings_file"
 
 PATH="$install_dir:$PATH" \

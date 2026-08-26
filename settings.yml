@@ -50,17 +50,21 @@ groups:
       - Gateway and Execution
 
 header:
+  links:
+    github: https://github.com/semantic-router/landscape
   logo: "brand/intelligent-routing-mark-512.png"
   motd: "**Intelligence is fragmenting. Routing is becoming the system.** Explore the products, open systems, research, and execution layers shaping intelligent routing."
 
 hide_organization_section_in_projects: true
 
 images:
-  open_graph: "http://127.0.0.1:8000/images/intelligent-routing-mark-512.png"
+  open_graph: "http://127.0.0.1:8000/images/intelligent-routing-og.png"
 
 logos_viewbox:
   adjust: true
   exclude:
     - nadir.svg
+
+screenshot_width: 3000
 
 view_mode: card

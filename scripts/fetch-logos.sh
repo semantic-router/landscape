@@ -96,6 +96,7 @@ fetch_svg github.svg "https://cdn.simpleicons.org/github/181717"
 fetch_svg kubernetes.svg "https://cdn.simpleicons.org/kubernetes/326CE5"
 fetch_svg envoy.svg "https://cdn.simpleicons.org/envoyproxy/AC6199"
 fetch_svg amd.svg "https://cdn.simpleicons.org/amd/ED1C24"
+fetch_svg lemonade.svg "https://raw.githubusercontent.com/lemonade-sdk/lemonade/main/src/app/assets/logo.svg"
 fetch_svg nvidia.svg "https://cdn.simpleicons.org/nvidia/76B900"
 fetch_svg arxiv.svg "https://cdn.simpleicons.org/arxiv/B31B1B"
 fetch_raster_as_svg openai.svg "https://www.google.com/s2/favicons?domain=openai.com&sz=256"
@@ -123,6 +124,8 @@ fetch_raster_as_svg orbit.svg "https://raw.githubusercontent.com/LAMDA-Model-Reu
 fetch_raster_as_svg routerarena.svg "https://raw.githubusercontent.com/RouteWorks/RouterArena/main/images/routerarena_logo_v2.png"
 fetch_raster_as_svg llmrouterbench.svg "https://raw.githubusercontent.com/ynulihao/LLMRouterBench/main/assets/logo.png"
 fetch_raster_as_svg routereval.svg "https://raw.githubusercontent.com/MilkThink-Lab/RouterEval/main/figure/logo.png"
+fetch_raster_as_svg edgeclaw.svg "https://raw.githubusercontent.com/OpenBMB/EdgeClaw/main/assets/EdgeClaw-logo.png"
+fetch_raster_as_svg clawxrouter.svg "https://raw.githubusercontent.com/OpenBMB/ClawXRouter/main/assets/clawxrouter-logo.png"
 
 # Organization or product-owned avatars and favicons for projects without SVG artwork.
 fetch_raster_as_svg ramp.svg "https://www.google.com/s2/favicons?domain=router.com&sz=256"

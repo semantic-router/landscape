@@ -23,6 +23,10 @@ build_args=(
   --cache-dir "$repo_root/.cache"
 )
 
+# Landscape2 overwrites current artifacts but does not remove obsolete embed
+# datasets, so a renamed or removed item can otherwise survive across builds.
+rm -rf -- "$repo_root/build"
+
 if [[ -n "$github_tokens" ]]; then
   printf 'Building with authenticated GitHub metadata.\n'
   GITHUB_TOKENS="$github_tokens" landscape2 "${build_args[@]}"

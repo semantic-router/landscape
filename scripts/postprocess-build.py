@@ -22,6 +22,13 @@ SCRIPT_TAG = (
     '<script id="intelligent-routing-landscape-ordering" '
     'src="./landscape-overrides.js" defer></script>'
 )
+SOCIAL_META_TAGS = (
+    '<meta property="og:image:type" content="image/png">'
+    '<meta property="og:image:width" content="1731">'
+    '<meta property="og:image:height" content="909">'
+    '<meta property="og:image:alt" content="Intelligent Routing Landscape — Map the fragmentation. Build the routing layer.">'
+    '<meta name="twitter:image:alt" content="Intelligent Routing Landscape — Map the fragmentation. Build the routing layer.">'
+)
 
 
 def update_creator_metadata() -> None:
@@ -54,6 +61,17 @@ def copy_brand_assets() -> None:
         REPO_ROOT / "brand" / "intelligent-routing-favicon.png",
         BUILD_DIR / "images" / "intelligent-routing-favicon.png",
     )
+    shutil.copy2(
+        REPO_ROOT / "brand" / "intelligent-routing-og.png",
+        BUILD_DIR / "images" / "intelligent-routing-og.png",
+    )
+    docs_dir = BUILD_DIR / "docs"
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    for filename in ("landscape.png", "landscape.pdf"):
+        generated = docs_dir / filename
+        fallback = REPO_ROOT / "brand" / "downloads" / filename
+        if not generated.is_file():
+            shutil.copy2(fallback, generated)
 
 
 def inject_overrides() -> None:
@@ -63,6 +81,8 @@ def inject_overrides() -> None:
 
         html = html_path.read_text(encoding="utf-8")
         additions = ""
+        if 'property="og:image:width"' not in html:
+            additions += SOCIAL_META_TAGS
         if "intelligent-routing-landscape-overrides" not in html:
             additions += STYLE_TAG
         if "intelligent-routing-landscape-ordering" not in html:

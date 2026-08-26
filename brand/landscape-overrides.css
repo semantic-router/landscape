@@ -6,6 +6,20 @@ select option[value="all"] {
   display: none !important;
 }
 
+#menu [data-category-jump-ready="true"] {
+  cursor: pointer;
+  transition: filter 140ms ease, box-shadow 140ms ease;
+}
+
+#menu [data-category-jump-ready="true"]:hover {
+  filter: brightness(0.94);
+}
+
+#menu [data-category-jump-ready="true"]:focus-visible {
+  outline: 3px solid rgba(255, 182, 27, 0.95);
+  outline-offset: -3px;
+}
+
 header img[alt*="logo" i] {
   width: 54px !important;
   height: 54px !important;

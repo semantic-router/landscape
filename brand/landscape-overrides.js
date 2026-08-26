@@ -75,6 +75,35 @@
     });
   };
 
+  const makeCategoryTitlesInteractive = () => {
+    const menu = document.getElementById("menu");
+    if (!menu) return;
+
+    [...menu.querySelectorAll("div")]
+      .filter((heading) => categories.includes(heading.textContent.trim()))
+      .forEach((heading) => {
+        if (heading.dataset.categoryJumpReady === "true") return;
+
+        const firstSubtitle = heading.nextElementSibling?.querySelector('button[id^="btn_"]');
+        if (!firstSubtitle) return;
+
+        const activateCategory = () => {
+          if (!firstSubtitle.disabled) firstSubtitle.click();
+        };
+
+        heading.dataset.categoryJumpReady = "true";
+        heading.setAttribute("role", "button");
+        heading.setAttribute("tabindex", "0");
+        heading.setAttribute("aria-label", `Show ${heading.textContent.trim()}`);
+        heading.addEventListener("click", activateCategory);
+        heading.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          activateCategory();
+        });
+      });
+  };
+
   const pinVllmSemanticRouter = () => {
     document.querySelectorAll('img[alt="vLLM Semantic Router logo"]').forEach((img) => {
       const card = img.closest(".card");
@@ -176,6 +205,7 @@
     labelFullGroupAsAll();
     reorderCardSections();
     reorderCategoryNavigation();
+    makeCategoryTitlesInteractive();
     pinVllmSemanticRouter();
     attachCardScrollSync();
     initializeGridZoom();

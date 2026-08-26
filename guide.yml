@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/guide.schema.json
+
+categories:
+  - category: Routing Products
+    content: |
+      Routing products expose model choice as a system capability. They differ in where the decision runs, how much control the operator retains, and whether routing selects one model or coordinates several.
+
+      Read this section as a product map, not an adoption ranking. Managed services, embedded application routers, and collaboration products make different trade-offs in control, portability, observability, and operating model.
+    subcategories:
+      - subcategory: Managed Model Routers
+        content: |
+          Provider-operated routers choose among an approved model set behind a hosted endpoint. They optimize for a stated objective such as quality, cost, or latency, but differ in model coverage, policy controls, telemetry, and portability.
+      - subcategory: Independent and Embedded Routers
+        content: |
+          Independent routing services sit across providers, while embedded routers are built into an application or coding agent. Both turn model selection into a product experience; the key distinction is whether the routing policy is reusable outside that product.
+      - subcategory: Multi-Model Collaboration
+        content: |
+          Collaboration systems go beyond selecting one winner. They can run models in parallel or sequence, exchange intermediate reasoning, verify outputs, or synthesize a final answer. This expands the design space from a model router to a System of Models.
+
+  - category: Open Routing Systems
+    content: |
+      Open routing systems make the decision layer inspectable and extensible. Some are production-oriented control planes; others are research implementations that explore new routing objectives, learning methods, and collaboration patterns.
+
+      A useful comparison starts with five questions: what signal is observed, what action can be taken, which objective is optimized, how the decision is evaluated, and whether live serving state is part of the loop.
+    subcategories:
+      - subcategory: Programmable Routers
+        content: |
+          Programmable routers let teams express policy over workload semantics, cost, latency, safety, provider availability, or model capability. They range from focused libraries to complete routing and execution layers integrated with gateways and inference runtimes.
+      - subcategory: Research Toolboxes and Methods
+        content: |
+          Research projects explore learned routers, preference-aware routing, cold-start generalization, budget allocation, and multi-model fusion. Their results are most useful when the training assumptions, candidate model pool, evaluation protocol, and serving overhead are made explicit.
+
+  - category: Gateway and Execution
+    content: |
+      Routing spans several layers that are often collapsed into one label. A semantic router decides *what capability path should handle the workload*. An AI gateway enforces provider policy and operational controls. A serving router decides *which replica or runtime should execute the request*.
+
+      Strong systems connect these layers without confusing them: semantic demand informs model and pool selection, while live queue, cache, placement, and hardware state shape feasible execution.
+    subcategories:
+      - subcategory: AI Gateways and Policy Planes
+        content: |
+          Gateways normalize APIs and centralize credentials, quotas, fallbacks, policy, observability, and provider routing. Semantic routing may be native, plugged in, or delegated to a separate decision service.
+      - subcategory: Inference Serving and Schedulers
+        content: |
+          Serving routers and schedulers operate closer to inference engines. They balance replicas, exploit prefix locality, manage disaggregated prefill and decode, and place workloads across heterogeneous accelerators. This is the execution substrate for a Mixture-of-Models.
+
+  - category: Evaluation and Community
+    content: |
+      Router quality is not a single accuracy number. A useful evaluation measures the end-to-end trade-off across answer quality, latency, inference and provider cost, reliability, safety, and routing overhead—on workloads that match the intended deployment.
+
+      Representative research directions include foundational routing ([RouterBench](https://arxiv.org/abs/2403.12031), [RouteLLM](https://arxiv.org/abs/2406.18665)); preference and cold-start routing ([Arch-Router](https://arxiv.org/abs/2506.16655), [RouteProfile](https://arxiv.org/abs/2605.00180)); budgeted and agentic routing ([BEST-Route](https://arxiv.org/abs/2603.10625), [Router-R1](https://arxiv.org/abs/2506.09033)); serving and reliability ([RouteBalance](https://arxiv.org/abs/2606.17949), [ContinuityBench](https://arxiv.org/abs/2607.15899)); and router diagnostics ([RouteJudge](https://arxiv.org/abs/2606.18774), [The Routing Plateau](https://arxiv.org/abs/2606.07587), [Opportunity Is Not Realizability](https://arxiv.org/abs/2608.08265)).
+    subcategories:
+      - subcategory: Benchmarks and Leaderboards
+        content: |
+          Benchmarks differ in task mix, labels, judge models, cost assumptions, candidate models, and whether they evaluate a static prediction or a deployable system. Leaderboards should therefore publish recipes and traces—not only aggregate scores—so results can be reproduced and diagnosed.

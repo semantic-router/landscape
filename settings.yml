@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/settings.schema.json
+
+foundation: vLLM Semantic Router
+
+url: http://127.0.0.1:8000
+
+colors:
+  color1: "rgba(51, 157, 241, 1)"
+  color2: "rgba(255, 182, 27, 1)"
+  color3: "rgba(33, 101, 180, 1)"
+  color4: "rgba(12, 31, 56, 0.90)"
+  color5: "rgba(51, 157, 241, 0.72)"
+  color6: "rgba(18, 48, 84, 0.76)"
+  color7: "rgba(205, 230, 255, 1)"
+
+description: Explore the products, open-source systems, serving infrastructure, benchmarks, and research shaping LLM routing and Mixture-of-Models.
+
+featured_items:
+  - field: maturity
+    options:
+      - value: open-source
+        order: 1
+        label: Open Source
+      - value: managed
+        order: 2
+        label: Managed
+      - value: research
+        order: 3
+        label: Research
+      - value: evaluation
+        order: 4
+        label: Evaluation
+
+footer:
+  links:
+    github: "https://github.com/vllm-project/semantic-router"
+    homepage: "https://vllm-sr.ai/"
+  logo: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  text: "An evidence-led ecosystem map maintained by the vLLM Semantic Router community. Product claims remain vendor-reported unless independently benchmarked."
+
+grid_items_size: medium
+
+groups:
+  - name: Routing Products
+    alias: products
+    categories:
+      - Routing Products
+  - name: Open Routing
+    alias: open
+    categories:
+      - Open Routing Systems
+  - name: Gateway and Serving
+    alias: execution
+    categories:
+      - Gateway and Execution
+  - name: Evaluation
+    alias: evaluation
+    categories:
+      - Evaluation and Community
+
+header:
+  links:
+    github: "https://github.com/vllm-project/semantic-router"
+  logo: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  motd: "**One Model API. Many Models Working Together.** Explore the decision and execution layers behind the emerging System of Models."
+
+hide_organization_section_in_projects: true
+
+images:
+  favicon: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"
+  open_graph: "https://raw.githubusercontent.com/vllm-project/semantic-router/main/dashboard/frontend/public/vllm-sr-logo.social.png"

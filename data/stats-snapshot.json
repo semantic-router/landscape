@@ -1,30 +1,30 @@
 {
   "repositories": {
-    "bytes": 703785588,
-    "contributors": 9458,
+    "bytes": 729464882,
+    "contributors": 9610,
     "languages": {
-      "C++": 7,
-      "CSS": 18,
+      "C++": 6,
+      "CSS": 17,
       "Go": 16,
       "Go Template": 14,
-      "HTML": 18,
+      "HTML": 17,
       "JavaScript": 22,
       "Jupyter Notebook": 9,
-      "Python": 51,
-      "Rust": 15,
+      "Python": 50,
+      "Rust": 13,
       "TypeScript": 19
     },
     "languages_bytes": {
-      "C++": 7941298,
-      "Cuda": 4755171,
-      "Go": 123948973,
-      "JavaScript": 6980680,
+      "C++": 7830742,
+      "Cuda": 4884982,
+      "Go": 132846210,
+      "JavaScript": 6659611,
       "Lua": 10103908,
-      "Python": 308728712,
-      "Rust": 96494117,
+      "Python": 328524484,
+      "Rust": 98046475,
       "Swift": 3713289,
-      "TypeScript": 117917528,
-      "Vue": 2844112
+      "TypeScript": 113715859,
+      "Vue": 2874816
     },
     "licenses": {
       "Apache License 2.0": 2,
@@ -35,7 +35,6 @@
       "Other": 2
     },
     "participation_stats": [
-      1010,
       881,
       802,
       844,
@@ -72,8 +71,8 @@
       1313,
       1315,
       1016,
-      1157,
-      1254,
+      1130,
+      1252,
       1501,
       1490,
       1471,
@@ -86,9 +85,10 @@
       2704,
       4332,
       2436,
-      1677
+      1692,
+      2470
     ],
     "repositories": 55,
-    "stars": 263628
+    "stars": 264631
   }
 }

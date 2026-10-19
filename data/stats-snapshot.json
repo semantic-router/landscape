@@ -1,7 +1,7 @@
 {
   "repositories": {
-    "bytes": 729464882,
-    "contributors": 9610,
+    "bytes": 776015583,
+    "contributors": 9770,
     "languages": {
       "C++": 6,
       "CSS": 17,
@@ -15,16 +15,16 @@
       "TypeScript": 19
     },
     "languages_bytes": {
-      "C++": 7830742,
-      "Cuda": 4884982,
-      "Go": 132846210,
-      "JavaScript": 6659611,
-      "Lua": 10103908,
-      "Python": 328524484,
-      "Rust": 98046475,
+      "C++": 8059832,
+      "Cuda": 4949684,
+      "Go": 137621059,
+      "JavaScript": 7312438,
+      "Lua": 10105846,
+      "Python": 355301120,
+      "Rust": 106783058,
       "Swift": 3713289,
-      "TypeScript": 113715859,
-      "Vue": 2874816
+      "TypeScript": 118341594,
+      "Vue": 3372708
     },
     "licenses": {
       "Apache License 2.0": 2,
@@ -35,7 +35,6 @@
       "Other": 2
     },
     "participation_stats": [
-      881,
       802,
       844,
       1000,
@@ -83,12 +82,13 @@
       2462,
       3051,
       2704,
-      4332,
+      4333,
       2436,
-      1692,
-      2470
+      1767,
+      2506,
+      2944
     ],
     "repositories": 55,
-    "stars": 264631
+    "stars": 266182
   }
 }
